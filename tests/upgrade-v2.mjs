@@ -4,7 +4,7 @@ import {Game,ROOMS,CLASSES,RUNES,playerSkill,itemForSlot,seeded,validateSave,sta
 const checks=[];
 function check(name,fn){fn();checks.push(name);}
 function arena(cls='knight'){
-  const g=new Game(undefined,42);g.begin([cls]);g.enemies=[];
+  const g=new Game(undefined,42);g.begin([cls]);g.enterRift();g.enemies=[];
   const p=g.players[0];p.x=-39;p.z=-29;p.invuln=0;p.stats.crit=0;
   const e=g.spawnEnemy('boss',p.x+2,p.z,1);e.cd=100;
   return {g,p,e};
@@ -13,7 +13,7 @@ check('Legacy equipment, currency, growth and player profiles survive migration'
   const old=JSON.parse(readFileSync(new URL('./fixtures/legacy-save.json',import.meta.url))),save=validateSave(old);
   assert(save);assert.equal(save.gold,old.gold);assert.equal(save.bestDepth,old.bestDepth);
   for(const [key,value] of Object.entries(old.profiles)){const expected=structuredClone(value),weapon=save.profiles[key].equipped.weapon;expected.equipped.weapon.name=weapon.name;expected.equipped.weapon.weaponType=weapon.weaponType;assert.deepEqual(save.profiles[key],{...expected,runes:[0,0,0]});}
-  assert.equal(save.settings.zoom,.88);const g=new Game(save);g.begin(save.lastClasses);
+  assert.equal(save.settings.zoom,.88);const g=new Game(save);g.begin(save.lastClasses);g.enterRift();
   assert.equal(g.players[0].profile.equipped.ring.legend,'frost');
 });
 check('Open arenas provide clear maneuvering space',()=>{const {g}=arena();for(const r of ROOMS.slice(1))for(let a=0;a<Math.PI*2;a+=Math.PI/16)assert(g.walkable(r.x+6*Math.cos(a),r.z+6*Math.sin(a),.4));assert(g.allowed(20,0));});

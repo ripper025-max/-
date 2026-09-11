@@ -1,6 +1,8 @@
 export const WORLD={minX:-76,maxX:76,minZ:-68,maxZ:68};
 export const TOWN={x:0,z:0,r:18,name:'새벽불 마을'};
-export const FIELD_NAME='바람결 대평원';
+export const FIELD_NAME='잿불 균열';
+export const RIFT_ENTRY={x:0,z:-23};
+export const RIFT_GATE={x:0,z:-7};
 // These are navigation landmarks in one continuous meadow, never arena bounds.
 export const REGIONS=[
  {name:'새벽불 마을',x:0,z:0,w:18,h:18,biome:'town',desc:'안전 지역 · 회복과 장비 정비'},
@@ -16,11 +18,11 @@ export const SERVICES=[
  {key:'skills',name:'훈련소',desc:'스킬 · 룬 · 직업 특성',x:6,z:-3,color:'#a6dbff'},
  {key:'hunts',name:'사냥 게시판',desc:'보스 선택 · 전설 보상',x:0,z:10,color:'#e8d194'}
 ];
-export const inTown=p=>Math.hypot(p.x-TOWN.x,p.z-TOWN.z)<TOWN.r;
+export const inTown=p=>p.scene!=='rift'&&Math.hypot(p.x-TOWN.x,p.z-TOWN.z)<TOWN.r;
 function segmentDistance(p,a,b){const x=b.x-a.x,z=b.z-a.z,t=Math.max(0,Math.min(1,((p.x-a.x)*x+(p.z-a.z)*z)/(x*x+z*z)));return Math.hypot(p.x-a.x-x*t,p.z-a.z-z*t);}
 export function onRoad(x,z,width=4.2){return REGIONS.slice(1).some(r=>segmentDistance({x,z},TOWN,r)<width);}
 export function regionAt(p){if(inTown(p))return 0;let best=1,d=Infinity;for(let i=1;i<REGIONS.length;i++){const r=REGIONS[i],n=Math.hypot(p.x-r.x,p.z-r.z);if(n<d){d=n;best=i;}}return best;}
-export function worldObjects(){
+export function worldObjects(scene='town'){
  let seed=1249;const rng=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};const objects=[];
  for(const [x,z,w,d,h,color] of [[0,-14,7,5,3.8,'#79634b'],[14,0,5,7,4,'#536b76'],[-14,0,5,7,3.5,'#6e6950'],[0,14,6,4,3.5,'#72564b']])objects.push({type:'house',x,z,w,d,h,color,solid:true});
  objects.push({type:'fountain',x:0,z:0,r:1.25,solid:true});
@@ -39,5 +41,6 @@ export function worldObjects(){
  objects.push({type:'tree',x:-46,z:-25,r:.7,size:3,h:5.6,solid:true,variant:1});
  objects.push({type:'ruin',x:48,z:-28,r:1,h:3.4,solid:true});
  objects.push({type:'campfire',x:-40,z:31,r:.5,solid:false});
- return objects;
+ if(scene==='rift')for(const side of [-1,1])for(const offset of [-7,7])objects.push({type:'ruin',x:RIFT_ENTRY.x+side*8,z:RIFT_ENTRY.z+offset,r:1,solid:true,h:3.4});
+ return scene==='rift'?objects.filter(o=>Math.hypot(o.x,o.z)>22&&Math.hypot(o.x-RIFT_ENTRY.x,o.z-RIFT_ENTRY.z)>8).map(o=>o.type==='tree'?{...o,type:'ruin',r:.8,h:2.2}:o):objects;
 }

@@ -1,4 +1,4 @@
-# EMBERFALL · 잿불의 성역
+# DREAD · 드레드
 
 This is the existing Korean action RPG requested by the user. Continue this implementation; do not recreate it from the public game URL or replace it with a framework scaffold. Read CODEX_START_HERE.md, README.md and HANDOFF.md first.
 
@@ -11,12 +11,12 @@ This is the existing Korean action RPG requested by the user. Continue this impl
 
 ## User-approved direction
 
-- Open field centered on a safe village for maintenance; sparse scenery, open sightlines and no encounter gates or mandatory area order.
+- Town AND its outdoor surroundings are noncombat spaces with no monsters. Explicit entry opens a separate rift dungeon: sparse scenery, open sightlines and no encounter gates or mandatory area order.
 - Player dash and Spacebar skill were explicitly removed. Do not restore them.
 - Eight distinct classes. Exactly ONE dedicated weapon type per class; never restore unrestricted weapon swapping. Five skills per class with three equipped slots, chosen in town. Rune interactions and boss-specific legendary rewards.
 - Individual loot rolls for every player, including ordinary monsters. No round-robin allocation. Class-eligible gear, protected overflow, and no automatic sale of full-bag rewards.
-- One continuous meadow rift: kill progress, guardian at 100%, timed tier unlock, town preparation.
-- Improve action motions/effects and readable Korean UI. Preserve local same-screen co-op and solo play.
+- Separate open sanctuary rift: kill progress, guardian at 100%, timed tier unlock, town preparation. Preserve recalled instance enemies, loot and progress.
+- Improve action motions/effects and readable Korean UI. Preserve local same-screen co-op and solo play. Use the separate main menu and rotating hero selection preview; the gameplay and preview must share one actor model.
 - Equipment locks, bulk salvage, comparisons and build presets are approved.
 - Random reward events and special co-op combo attacks were rejected.
 

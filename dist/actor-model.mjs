@@ -1,0 +1,11 @@
+// A single assembled actor, with world-space vertices and camera-depth sorting.
+export class ActorModel {
+ constructor(renderer){this.r=renderer;this.faces=[];}
+ face(v,color,stroke='#10202b30',width=.45){this.faces.push({v,color,stroke,width,depth:v.reduce((n,p)=>n+p.x+p.z+p.h,0)/v.length});}
+ box(x,z,w,d,h,color,bottom=0,angle=0){const co=Math.cos(angle),si=Math.sin(angle),v=[[-w/2,-d/2],[w/2,-d/2],[w/2,d/2],[-w/2,d/2]].map(([a,b])=>({x:x+a*co-b*si,z:z+a*si+b*co}));const at=(i,h)=>({...v[i],h});for(let i=0;i<4;i++){const j=(i+1)%4,dx=v[j].x-v[i].x,dz=v[j].z-v[i].z;if(dz-dx>1e-8)this.face([at(i,bottom),at(j,bottom),at(j,bottom+h),at(i,bottom+h)],tint(color,.62+.17*Math.abs(dz)/(Math.abs(dx)+Math.abs(dz))));}this.face(v.map(p=>({...p,h:bottom+h})),tint(color,1.1));}
+ crystal(x,z,h,r,color,angle=0){const v=Array.from({length:4},(_,i)=>({x:x+Math.cos(angle+i*Math.PI/2)*r,z:z+Math.sin(angle+i*Math.PI/2)*r,h}));for(let i=0;i<4;i++){this.face([{x,z,h:h+r*2.1},v[i],v[(i+1)%4]],tint(color,.7+i*.1));this.face([{x,z,h:h-r*.9},v[(i+1)%4],v[i]],tint(color,.5+i*.1));}}
+ blade(x,z,w,length,h,color,bottom,angle){const co=Math.cos(angle),si=Math.sin(angle),shape=[[-w*.42,-length/2],[w*.42,-length/2],[w*.5,length*.32],[0,length/2],[-w*.5,length*.32]],v=shape.map(([a,b])=>({x:x+a*co-b*si,z:z+a*si+b*co}));const at=(i,h)=>({...v[i],h});for(let i=0;i<v.length;i++){const j=(i+1)%v.length,dx=v[j].x-v[i].x,dz=v[j].z-v[i].z;if(dz-dx>0)this.face([at(i,bottom),at(j,bottom),at(j,bottom+h),at(i,bottom+h)],tint(color,.64));}const ridge={x,z,h:bottom+h+.055};for(let i=0;i<v.length;i++)this.face([ridge,at(i,bottom+h),at((i+1)%v.length,bottom+h)],tint(color,i<2?1.15:.9));}
+ line(v,color,width){this.face(v,null,color,width);}
+ draw(){this.faces.sort((a,b)=>a.depth-b.depth);for(const f of this.faces){const points=f.v.map(v=>this.r.point(v.x,v.z,v.h));if(f.color)this.r.poly(points,f.color,f.stroke,f.width);else this.r.line(points,f.stroke,f.width);}}
+}
+const colors=new Map();function tint(hex,f){const key=hex+f;if(colors.has(key))return colors.get(key);const n=parseInt(hex.slice(1),16),rgb=[n>>16,(n>>8)&255,n&255].map(v=>Math.min(255,Math.round(v*f))),value=`rgb(${rgb})`;colors.set(key,value);return value;}

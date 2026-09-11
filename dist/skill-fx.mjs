@@ -20,7 +20,7 @@ export function drawSkillFx(r,f){
  if(!['skillcue','skillimpact','meteorimpact','meteor'].includes(f.type))return false;
  const c=r.ctx,t=clamp(1-f.life/f.total),fade=Math.min(1,(1-t)*2.4),rr=f.r||3,col=f.color||'#ffe0a0',a=f.angle||0,detail=r.game.save.settings.particles!==false;
  const screen=r.point(f.x,f.z);if(screen.x< -rr*r.scale*2||screen.x>r.w+rr*r.scale*2||screen.y< -rr*r.scale*2||screen.y>r.h+rr*r.scale*2+400)return true;
- c.save();c.globalCompositeOperation='lighter';c.globalAlpha=fade;
+ c.save();c.globalCompositeOperation='lighter';c.globalAlpha=fade*(r.game.players.length>1?.65:.82);
  if(f.type==='meteor'){
   const fall=1-t,h=fall*14,x=f.x-fall*5,z=f.z-fall*2;
   r.groundCircle(f.x,f.z,rr,'#ffca88',.65,2);r.groundCircle(f.x,f.z,rr*t,'#ff9d68',.22,3);

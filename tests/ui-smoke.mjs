@@ -9,7 +9,7 @@ try{
   const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage();
   page.on('pageerror',e=>errors.push(`${cls}: ${e.message}`));
   await page.goto(process.env.GAME_URL||'http://127.0.0.1:4173');
-  await page.locator(`[data-class="${cls}"]`).click();await page.locator('#start-btn').click();await page.locator('#skills-btn').click();
+  await page.locator('#adventure-btn').click();await page.locator(`[data-class="${cls}"]`).click();await page.locator('#start-btn').click();await page.locator('#skills-btn').click();
   await page.locator('.skill-card').first().waitFor();
   assert.equal(await page.locator('.skill-card').count(),6);
   assert.equal(await page.locator('.skill-select').count(),3,'Passives must not contain active slot selectors');
@@ -24,13 +24,13 @@ try{
   assert((await hud.locator('small').textContent()).length>0);
   assert.equal(await hud.getAttribute('aria-label'),`1P ${await hud.locator('small').textContent()}`);
   assert(name.includes(await hud.locator('small').textContent()),'Rune name must refresh on HUD');
-  await page.reload();await page.locator('#start-btn').click();await page.locator('#skills-btn').click();
+  await page.reload();await page.locator('#continue-btn').click();await page.locator('#skills-btn').click();
   assert.equal(await page.locator('[data-ui="skill-select"][data-slot="0"][data-choice="3"]').getAttribute('aria-pressed'),'true');
   if(process.env.UI_SCREENSHOT&&cls==='knight')await page.screenshot({path:process.env.UI_SCREENSHOT});
   await context.close();
  }
  const context=await browser.newContext({viewport:{width:850,height:800}}),page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
- await page.goto(process.env.GAME_URL||'http://127.0.0.1:4173');await page.locator('[data-mode="2"]').click();await page.locator('#start-btn').click();await page.locator('#skills-btn').click();
+ await page.goto(process.env.GAME_URL||'http://127.0.0.1:4173');await page.locator('#adventure-btn').click();await page.locator('[data-mode="2"]').click();await page.locator('#start-btn').click();await page.locator('#skills-btn').click();
  await page.locator('[data-ui="player"][data-player="1"]').click();await page.locator('[data-ui="skill-select"][data-slot="0"][data-choice="4"]').click();await page.locator('[data-ui="close"]').click();
  assert.equal(await page.locator('[data-hud-player="1"] [data-action="skill0"] small').textContent(),'얼음 창');
  assert.equal(await page.locator('[data-hud-player="0"] [data-action="skill0"] small').textContent(),'회전베기');

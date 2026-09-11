@@ -1,9 +1,9 @@
 {
   "name": "emberfall-codex",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "type": "module",
-  "description": "Portable editable source for EMBERFALL",
+  "description": "DREAD: portable Korean dungeon action RPG",
   "engines": {
     "node": ">=22"
   },
@@ -13,6 +13,8 @@
     "test": "node tools/test.mjs",
     "test:full": "node tests/full-run.mjs",
     "test:render": "node tests/render-smoke.mjs",
-    "test:ui": "node tests/ui-smoke.mjs"
+    "test:ui": "node tests/ui-smoke.mjs",
+    "test:presentation": "node tests/presentation-browser.mjs",
+    "test:menu": "node tests/menu-browser.mjs"
   }
 }

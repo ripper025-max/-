@@ -1,9 +1,9 @@
 import {WORLD,REGIONS,TOWN,SERVICES,onRoad,regionAt,worldObjects,meadowTone} from './world.mjs';
 export function createField(r){
- r.staticObjects=worldObjects();r.tiles=[];
+ r.staticObjects=worldObjects(r.game.scene);r.tiles=[];
  for(let x=WORLD.minX;x<=WORLD.maxX;x++)for(let z=WORLD.minZ;z<=WORLD.maxZ;z++){
   const hash=Math.abs(Math.sin(x*12.9898+z*78.233)*43758.5453)%1,area=regionAt({x,z});
-  r.tiles.push({x,z,room:area,v:hash,tone:meadowTone(x,z),road:onRoad(x,z,1.8)&&hash>.1,town:Math.hypot(x,z)<18,crack:hash>.97,moss:hash<.15});
+  r.tiles.push({x,z,room:area,v:hash,tone:meadowTone(x,z),road:onRoad(x,z,1.8)&&hash>.1,town:r.game.scene!=='rift'&&Math.hypot(x,z)<18,crack:hash>.97,moss:hash<.15});
  }
  r.ambient=Array.from({length:38},(_,i)=>({x:(i*.618)%1,y:(i*.414)%1,speed:.1+(i%5)*.07,s:1+(i%3)*.3,phase:i}));
 }
@@ -44,11 +44,11 @@ export function fieldMap(r,canvas=r.map){
  const c=canvas===r.map?r.mc:canvas.getContext('2d'),w=canvas.width,h=canvas.height,g=r.game,pad=18;
  c.clearRect(0,0,w,h);c.fillStyle='#102631';c.fillRect(0,0,w,h);
  const sx=(w-pad*2)/(WORLD.maxX-WORLD.minX),sz=(h-pad*2)/(WORLD.maxZ-WORLD.minZ),map=p=>({x:pad+(p.x-WORLD.minX)*sx,y:pad+(p.z-WORLD.minZ)*sz});
- const center=map(TOWN);c.fillStyle='#526f50';c.fillRect(pad,pad,w-pad*2,h-pad*2);
- for(let i=0;i<70;i++){const x=pad+(Math.sin(i*12.3)*.5+.5)*(w-pad*2),y=pad+(Math.cos(i*8.7)*.5+.5)*(h-pad*2);c.fillStyle=i%2?'#6e855c33':'#9ba27522';c.beginPath();c.ellipse(x,y,w*.08,h*.07,0,0,Math.PI*2);c.fill();}
- for(const area of REGIONS.slice(1)){const q=map(area);c.beginPath();c.moveTo(center.x,center.y);c.lineTo(q.x,q.y);c.strokeStyle='#c1ba9355';c.lineWidth=canvas===r.map?1:3;c.stroke();}
- c.beginPath();c.ellipse(center.x,center.y,TOWN.r*sx,TOWN.r*sz,0,0,Math.PI*2);c.fillStyle='#95b6a766';c.fill();
- REGIONS.forEach((area,i)=>{const q=map(area);c.beginPath();c.arc(q.x,q.y,i===0?5:3,0,Math.PI*2);c.fillStyle=i===0?'#c6f6dd':i===4?'#e9aa86':'#dfd5ae';c.fill();c.textAlign='center';c.font=canvas===r.map?'10px sans-serif':'bold 16px sans-serif';c.fillStyle='#e8eee0';c.fillText(i===0?'마을':i===4?'수호자':canvas===r.map?'':area.name,q.x,q.y-10);if(g.targetRegion===i){c.strokeStyle='#fff0b5';c.lineWidth=2;c.strokeRect(q.x-9,q.y-9,18,18);}});
+ const dungeon=g.scene==='rift',center=map(TOWN);c.fillStyle=dungeon?'#333b48':'#526f50';c.fillRect(pad,pad,w-pad*2,h-pad*2);
+ for(let i=0;i<(dungeon?0:70);i++){const x=pad+(Math.sin(i*12.3)*.5+.5)*(w-pad*2),y=pad+(Math.cos(i*8.7)*.5+.5)*(h-pad*2);c.fillStyle=i%2?'#6e855c33':'#9ba27522';c.beginPath();c.ellipse(x,y,w*.08,h*.07,0,0,Math.PI*2);c.fill();}
+ if(!dungeon)for(const area of REGIONS.slice(1)){const q=map(area);c.beginPath();c.moveTo(center.x,center.y);c.lineTo(q.x,q.y);c.strokeStyle='#c1ba9355';c.lineWidth=canvas===r.map?1:3;c.stroke();}
+ if(!dungeon){c.beginPath();c.ellipse(center.x,center.y,TOWN.r*sx,TOWN.r*sz,0,0,Math.PI*2);c.fillStyle='#95b6a766';c.fill();}
+ REGIONS.forEach((area,i)=>{if(dungeon&&i===0||!dungeon&&i!==0)return;const q=map(area);c.beginPath();c.arc(q.x,q.y,i===0?5:3,0,Math.PI*2);c.fillStyle=i===0?'#c6f6dd':i===4?'#e9aa86':'#dfd5ae';c.fill();c.textAlign='center';c.font=canvas===r.map?'10px sans-serif':'bold 16px sans-serif';c.fillStyle='#e8eee0';c.fillText(i===0?'마을':i===4?'수호자':canvas===r.map?'':area.name,q.x,q.y-10);if(g.targetRegion===i){c.strokeStyle='#fff0b5';c.lineWidth=2;c.strokeRect(q.x-9,q.y-9,18,18);}});
  for(const e of g.enemies){if(e.dead||!g.players.some(p=>Math.hypot(p.x-e.x,p.z-e.z)<24))continue;const q=map(e);c.fillStyle=e.type==='boss'?'#ff896f':e.type==='elite'?'#f5ba72':'#e9b29a';c.fillRect(q.x-1,q.y-1,e.type==='boss'?5:2,e.type==='boss'?5:2);}
  for(const p of g.players){const q=map(p);c.beginPath();c.arc(q.x,q.y,3.5,0,Math.PI*2);c.fillStyle=p.down?'#e68484':p.id?'#87cdff':'#fff5c2';c.fill();c.strokeStyle='#102632';c.lineWidth=1;c.stroke();}
  c.strokeStyle='#76949580';c.strokeRect(1,1,w-2,h-2);

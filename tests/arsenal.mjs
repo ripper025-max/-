@@ -3,7 +3,7 @@ import {Game,CLASSES,RUNES,BOSSES,WEAPONS,LEGENDS,itemForSlot,seeded,stats,valid
 const results=[];
 function check(name,fn){fn();results.push(name);}
 function setup(cls='knight'){
- const g=new Game(undefined,53);g.begin([cls]);g.enemies=[];const p=g.players[0];p.x=-39;p.z=-29;p.invuln=0;p.stats.crit=0;
+ const g=new Game(undefined,53);g.begin([cls]);g.enterRift();g.enemies=[];const p=g.players[0];p.x=-39;p.z=-29;p.invuln=0;p.stats.crit=0;
  const e=g.spawnEnemy('boss',p.x+2,p.z,1);e.cd=100;e.hp=e.maxHp=50000;return {g,p,e};
 }
 const tick=(g,n=15,inputs=[{}])=>{for(let i=0;i<n;i++)g.step(.04,inputs);};

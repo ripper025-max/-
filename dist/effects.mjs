@@ -5,6 +5,7 @@ export function combatFx(r,f){
  const ring=(rr,alpha,width)=>r.groundCircle(f.x,f.z,rr,col,alpha,width);
  if(!['impact','muzzle','thrust','windup','castsigil','crosscut','smoke','soulburst','shatter','summon','empower','aimburst','radialwarning'].includes(f.type))return false;
  if(f.type==='radialwarning'&&(f.owner?.dead||f.owner?.action!==f.action))return true;
+ if(f.type==='summon'){r.glow(f.x,f.z,.65,col,.14*(1-t),.5+t);return true;}
  c.save();
  if(f.type==='radialwarning'){
   for(let i=0;i<f.count;i++)ray(angle+i*Math.PI*2/f.count,radius,.04);ring(.8,.6,2);
@@ -35,7 +36,7 @@ export function combatFx(r,f){
 }
 export function drawSummon(r,m){
  const p=r.point(m.x,m.z,1),c=r.ctx;const col=m.type==='turret'?'#f9c587':'#8bf6d3';
- r.groundCircle(m.x,m.z,.65,col,.45,1);r.glow(m.x,m.z,1.4,col,.15);
+ r.groundCircle(m.x,m.z,.5,col,.22,1);if(r.game.summons.length<6)r.glow(m.x,m.z,1,col,.08);
  if(m.type==='turret'){
   for(let i=0;i<3;i++){const a=i*Math.PI*2/3;r.box(m.x+Math.cos(a)*.35,m.z+Math.sin(a)*.35,.18,.8,.2,'#627178',0,a);}
   r.box(m.x,m.z,.7,.7,.65,'#927657',.15);r.box(m.x+Math.cos(m.angle)*.4,m.z+Math.sin(m.angle)*.4,.25,1.2,.25,'#c4c9bd',.75,m.angle-Math.PI/2);
