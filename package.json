@@ -1,0 +1,17 @@
+{
+  "name": "emberfall-codex",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable editable source for EMBERFALL",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "dev": "node tools/serve.mjs",
+    "test": "node tools/test.mjs",
+    "test:full": "node tests/full-run.mjs",
+    "test:render": "node tests/render-smoke.mjs"
+  }
+}

@@ -1,0 +1,25 @@
+const paths={
+ blast:'<circle cx="12" cy="12" r="5"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/>',
+ sword:'<path d="m17 3 4 0 0 4-11 11-4-4Z"/><path d="m5 13 6 6M3 21l4-4M2 20l2 2"/>',
+ staff:'<path d="m5 21 11-13M14 2l-3 4 4 4 5-2 2-5-4-2Z"/><path d="m12 4 6 3"/>',
+ bow:'<path d="M4 20 20 4M4 20C2 8 8 2 20 4L4 20Z"/><path d="M15 4h5v5M3 17l4 4"/>',
+ arrows:'<path d="M4 20 20 4M14 4h6v6M3 12 12 3M7 3h5v5M12 21l9-9M16 12h5v5"/>',
+ bag:'<path d="M6 8h12l3 13H3L6 8Z"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h6"/>',
+ skill:'<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/><path d="M3 3l2 2m14 14 2 2M3 21l2-2M19 5l2-2"/>',
+ menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',
+ shield:'<path d="M12 3 3 7v6c0 5 9 9 9 9s9-4 9-9V7l-9-4Z"/><path d="M12 7v10M8 12h8"/>',
+ ring:'<circle cx="12" cy="15" r="6"/><path d="m8 5 4-3 4 3-4 5-4-5Z"/>',
+ relic:'<path d="m4 2 8 11 8-11M12 13l-5 5 5 5 5-5-5-5Z"/>',
+ whirl:'<path d="M20 10c0-5-8-9-13-4-5 5 0 13 5 13 5 0 7-6 3-9-3-2-6 1-4 4"/><path d="m17 4 3 6-6 1M5 17l-2-5 5 1"/>',
+ shock:'<path d="m2 19 5-6 4 3 6-11 5 14M7 21l5-5 4 5M12 2v5M3 5l3 3M21 3l-3 3"/>',
+ meteor:'<path d="m21 2-7 4M22 7l-7 4M18 1l-7 8"/><circle cx="8" cy="16" r="6"/><path d="m7 13-2 3 3 3"/>',
+ flame:'<path d="M13 2c3 6-2 7 1 10 2-1 3-3 3-5 7 9 4 15-5 15C2 22 0 14 8 7c-1 5 2 6 3 4 2-3-1-5 2-9Z"/>',
+ frost:'<path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 3l3 3 3-3M9 21l3-3 3 3M3 10l4-1-1-4M21 14l-4 1 1 4M3 14l4 1-1 4M21 10l-4-1 1-4"/>',
+ bolt:'<path d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z"/>',
+ trap:'<path d="M3 18h18l-3-8H6l-3 8ZM7 10l-2-5M17 10l2-5M9 10l3-7 3 7M7 18v3M17 18v3"/>',
+ rain:'<path d="m7 2-4 13M13 2 9 15M20 2l-4 13M1 12l2 3 4-1M7 12l2 3 4-1M14 12l2 3 4-1M3 21h18"/>',
+ potion:'<path d="M9 2h6v5l5 8a4 4 0 0 1-4 7H8a4 4 0 0 1-4-7l5-8V2ZM8 2h8M6 15h12"/><path d="M12 12v7M9 16h6"/>',
+ sound:'<path d="m11 4-5 4H2v8h4l5 4V4ZM15 8a6 6 0 0 1 0 8M18 4a11 11 0 0 1 0 16"/>',
+ armor:'<path d="m8 3-6 4 3 6 3-1v9h8v-9l3 1 3-6-6-4a4 4 0 0 1-8 0Z"/>'
+};
+export function icon(name){return`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${paths[name]||paths.skill}</svg>`;}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11191d">
+  <meta name="description" content="잿불의 성역. 혼자 또는 둘이 탐험하는 던전 액션 RPG. 장비를 발견하고, 스킬을 성장시키고, 더 깊은 성역에 도전하세요.">
+  <title>EMBERFALL · 잿불의 성역</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="game" aria-label="잿불의 성역 게임">
+    <canvas id="world" aria-label="방향키 또는 WASD로 이동하는 던전" tabindex="0"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div id="hud" hidden>
+      <div class="quest"><span class="eyebrow" id="depth">성역 · 심층 1</span><h1 id="room-title">버려진 관문</h1><p id="objective">성역의 적을 처치하세요</p><div id="room-progress"></div></div>
+      <div class="top-actions"><button id="bag-btn" title="장비 · I" aria-label="장비 가방"><span data-icon="bag"></span><span>장비</span><kbd>I</kbd></button><button id="skills-btn" title="스킬 · K" aria-label="스킬 성장"><span data-icon="skill"></span><span>스킬</span><kbd>K</kbd><b id="points-badge" hidden></b></button><button id="settings-btn" title="메뉴 · Esc" aria-label="게임 메뉴"><span data-icon="menu"></span><span>메뉴</span></button></div>
+      <div class="map-wrap"><canvas id="minimap" width="240" height="175" aria-label="던전 진행 지도"></canvas><div class="map-caption"><span id="room-count">01 / 05</span><span id="gold">0 G</span></div></div>
+      <div id="boss-hud" hidden><p>성역의 타락한 수호자</p><strong>잿불 군주, 모르바스</strong><div><i id="boss-health"></i></div></div>
+      <div id="travel-controls"><button id="map-btn">전체 지도 · G</button><button id="town-travel">마을 정비 · C</button><button id="town-btn" hidden>마을 정비</button><p id="navigation"></p></div><div id="hotbars"></div>
+      <div id="interact" hidden></div>
+      <div id="help-hint"><span>W A S D <small>이동</small></span><span>마우스 클릭 <small>공격</small></span><span>Q E R <small>스킬</small></span><button id="help-btn">조작법 <b>?</b></button></div>
+    </div>
+    <div id="toasts" role="status" aria-live="polite"></div>
+    <div id="intro" class="intro">
+      <div class="intro-brand"><span class="edition">CHOOSE YOUR HERO</span><h1>EMBER<span>FALL</span></h1><p>잿불의 성역</p></div>
+      <section class="start-panel" aria-label="모험 시작">
+        <div class="panel-kicker"><span>모험 준비</span><span class="muted">LOCAL 1–2 PLAYERS</span></div>
+        <div class="mode-tabs" role="group" aria-label="인원 선택"><button class="selected" data-mode="1">혼자 모험</button><button data-mode="2">2인 협동</button></div>
+        <div id="class-pickers"></div>
+        <div class="start-bottom"><span id="save-info">검을 들고, 잠든 성역으로.</span><button id="start-btn" class="primary">마을에서 시작 <span>→</span></button></div>
+        <button id="intro-help" class="text-button">조작법 보기 · 키보드 / 게임패드</button>
+      </section>
+      <div class="intro-footer"><span>열린 필드 · 새벽불 마을 · 6명의 영웅</span><span>한국어 · 브라우저 저장</span></div>
+    </div>
+    <div id="touch-controls" hidden><div id="joystick" aria-label="이동 조이스틱"><i></i></div><div class="touch-actions"><button data-touch="skill0">Q</button><button data-touch="skill1">E</button><button data-touch="skill2">R</button><button data-touch="potion">회복</button><button class="touch-attack" data-touch="attack">공격</button></div></div>
+    <dialog id="panel"><div id="panel-content"></div></dialog>
+    <noscript>이 게임을 실행하려면 브라우저에서 JavaScript를 허용해 주세요.</noscript>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

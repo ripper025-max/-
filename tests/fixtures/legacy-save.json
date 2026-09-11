@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "profiles": {
+    "0:knight": {
+      "cls": "knight",
+      "level": 1,
+      "xp": 0,
+      "points": 2,
+      "ranks": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "bag": [],
+      "equipped": {
+        "weapon": {
+          "id": "67ba90cc-9989-4023-9f9c-2c8790ed0ac2",
+          "slot": "weapon",
+          "cls": "knight",
+          "level": 1,
+          "rarity": 0,
+          "power": 17,
+          "base": 10,
+          "affixes": [],
+          "legend": null,
+          "name": "장검",
+          "upgrades": 0
+        },
+        "armor": {
+          "id": "78435abe-c05e-4398-ac5d-ba7582e9ac19",
+          "slot": "armor",
+          "cls": "knight",
+          "level": 1,
+          "rarity": 0,
+          "power": 17,
+          "base": 23,
+          "affixes": [],
+          "legend": null,
+          "name": "갑옷",
+          "upgrades": 0
+        },
+        "ring": {
+          "id": "a1bc4dfa-b61f-4f09-8c53-be50279bfbbc",
+          "slot": "ring",
+          "cls": "knight",
+          "level": 5,
+          "rarity": 4,
+          "power": 62,
+          "base": 12,
+          "affixes": [
+            {
+              "key": "armor",
+              "value": 6
+            },
+            {
+              "key": "health",
+              "value": 43
+            },
+            {
+              "key": "damage",
+              "value": 11
+            }
+          ],
+          "legend": "frost",
+          "name": "겨울의 맹세",
+          "upgrades": 0
+        },
+        "relic": null
+      }
+    },
+    "1:mage": {
+      "cls": "mage",
+      "level": 1,
+      "xp": 0,
+      "points": 2,
+      "ranks": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "bag": [
+        {
+          "id": "829d7929-b69a-4b9a-a45f-4c763e25b83f",
+          "slot": "relic",
+          "cls": "mage",
+          "level": 4,
+          "rarity": 3,
+          "power": 48,
+          "base": 9,
+          "affixes": [
+            {
+              "key": "health",
+              "value": 39
+            },
+            {
+              "key": "crit",
+              "value": 6
+            },
+            {
+              "key": "resource",
+              "value": 16
+            }
+          ],
+          "legend": null,
+          "name": "수호자의 목걸이",
+          "upgrades": 0
+        }
+      ],
+      "equipped": {
+        "weapon": {
+          "id": "30cb0593-a447-48c4-89e6-c119700a2970",
+          "slot": "weapon",
+          "cls": "mage",
+          "level": 1,
+          "rarity": 0,
+          "power": 17,
+          "base": 10,
+          "affixes": [],
+          "legend": null,
+          "name": "지팡이",
+          "upgrades": 0
+        },
+        "armor": {
+          "id": "33411806-3dbf-4744-8ff6-652db27641c1",
+          "slot": "armor",
+          "cls": "mage",
+          "level": 1,
+          "rarity": 0,
+          "power": 17,
+          "base": 23,
+          "affixes": [],
+          "legend": null,
+          "name": "갑옷",
+          "upgrades": 0
+        },
+        "ring": null,
+        "relic": null
+      }
+    }
+  },
+  "gold": 987,
+  "bestDepth": 3,
+  "settings": {
+    "sound": true,
+    "volume": 0.45,
+    "difficulty": "adventure",
+    "particles": true
+  },
+  "lastClasses": [
+    "knight",
+    "mage"
+  ]
+}
