@@ -2,12 +2,13 @@
 const TAU=Math.PI*2;
 const clamp=v=>Math.max(0,Math.min(1,v));
 const colors={knight:'#ffd687',mage:'#a3eaff',ranger:'#c9eea0',assassin:'#d9acff',necromancer:'#8ff4d3',engineer:'#91e5ff',druid:'#c6e991',monk:'#96eaff'};
-export const SKILL_VISUALS={knight:['sunwheel','earthsplit','judgment'],mage:['glacier','inferno','meteorcall'],ranger:['volley','venom','arrowstorm'],assassin:['execution','veil','bladestorm'],necromancer:['soulgate','hex','requiem'],engineer:['assembly','cryo','overload'],druid:['roots','pack','bear'],monk:['flurry','sanctuary','thunder']};
+export const SKILL_VISUALS={knight:['sunwheel','earthsplit','judgment','rally','implosion'],mage:['glacier','inferno','meteorcall','chaincast','icecast'],ranger:['volley','venom','arrowstorm','piercecast','focus'],assassin:['execution','veil','bladestorm','venom','puncture'],necromancer:['soulgate','hex','requiem','archers','golem'],engineer:['assembly','cryo','overload','fuse','volley'],druid:['roots','pack','bear','thunder','renewal'],monk:['flurry','sanctuary','thunder','wavecast','meditation']};
 export function skillCue(p,index,range,point,rune){
  const atPlayer=p.cls==='monk'||p.cls==='druid'&&index!==0||p.cls==='knight'||p.cls==='assassin'||p.cls==='mage'&&(index===0||index===1&&rune===1)||p.cls==='ranger'&&(index===0||index===2&&rune===1)||p.cls==='necromancer'&&(index===0||index===1&&rune===1)||p.cls==='engineer'&&index===2;
- const q=(index>=3?['knight','necromancer'].includes(p.cls)||index===4&&['ranger','druid','monk'].includes(p.cls):atPlayer)?p:point;
- const sizes={knight:[range,4,range],mage:[range,3,rune===1?5:4.2],ranger:[4,rune===1?3.5:3.1,rune===2?2.7:4.2],assassin:[range,range,rune===2?2.5:3.5],necromancer:[2,3.5,4],engineer:[1.6,3.4,1.6],druid:[rune===2?4.25:3.4,2,range],monk:[range,range,range]};
- return {type:'skillcue',x:q.x,z:q.z,color:colors[p.cls],style:SKILL_VISUALS[p.cls][index]||(['mage','monk','druid'].includes(p.cls)?'thunder':'judgment'),r:sizes[p.cls][index]||Math.min(range,4),angle:Math.atan2(p.face.z,p.face.x),life:index===2?1.15:.75,rune};
+ const extraAtPlayer=index>=3&&!(p.cls==='assassin'||index===3&&['engineer','druid'].includes(p.cls));
+ const q=(index>=3?extraAtPlayer:atPlayer)?p:point;
+ const sizes={knight:[range,4,range,3,range],mage:[range,3,rune===1?5:4.2,1.5,1.5],ranger:[4,rune===1?3.5:3.1,rune===2?2.7:4.2,1.5,1.4],assassin:[range,range,rune===2?2.5:3.5,3.5,1],necromancer:[2,3.5,4,2,2],engineer:[1.6,3.4,1.6,4,2],druid:[rune===2?4.25:3.4,2,range,4,1.8],monk:[range,range,range,1.5,1.5]};
+ return {type:'skillcue',x:q.x,z:q.z,color:colors[p.cls],style:SKILL_VISUALS[p.cls][index],r:sizes[p.cls][index],angle:Math.atan2(p.face.z,p.face.x),life:p.cls==='engineer'&&index===3?.6:index===2?1.15:.75,rune};
 }
 function arc(r,x,z,rr,a,length,h,color,width){const pts=Array.from({length:23},(_,i)=>{const angle=a+i/22*length;return r.point(x+Math.cos(angle)*rr,z+Math.sin(angle)*rr,h);});r.line(pts,color,width);return pts;}
 function ribbon(r,x,z,rr,a,length,h,color,alpha=.8){const c=r.ctx;c.save();c.globalAlpha*=alpha;const outer=[],inner=[];for(let i=0;i<=24;i++){const t=i/24,angle=a+t*length,w=Math.sin(t*Math.PI)*.22;outer.push(r.point(x+Math.cos(angle)*rr,z+Math.sin(angle)*rr,h));inner.unshift(r.point(x+Math.cos(angle)*rr*(1-w),z+Math.sin(angle)*rr*(1-w),h+.03));}r.poly([...outer,...inner],color);r.line(outer,'#fff9e6',1.8);c.restore();}
@@ -31,7 +32,25 @@ export function drawSkillFx(r,f){
   if(impact){beam(r,f.x,f.z,6*(1-t),1.1,col,.6*(1-t));for(let i=0;i<(detail?12:5);i++){const angle=i*2.4,dist=rr*(.3+t*.7);r.crystal(f.x+Math.cos(angle)*dist,f.z+Math.sin(angle)*dist,Math.sin(t*Math.PI)*2.4,.13*(1-t)+.01,i%2?'#ffdca1':'#ea8258',angle);}}
  }else{
   const s=f.style;
-  if(['sunwheel','execution','bladestorm'].includes(s)){
+  if(['rally','focus','renewal','meditation'].includes(s)){
+   const color=s==='renewal'?'#c6e991':s==='meditation'?'#96eaff':col;
+   for(let i=0;i<2;i++)arc(r,f.x,f.z,rr*(.5+t*.5),a+i*Math.PI,Math.PI*.8,.15+i*.35,color,2.5*(1-t)+.5);
+   r.glow(f.x,f.z,rr,color,.16*(1-t));sparks(r,f.x,f.z,rr*.6,t,color,detail?10:4,.8);
+  }else if(s==='implosion'){
+   for(let i=0;i<3;i++)arc(r,f.x,f.z,rr*(1-t*.8),a+i*TAU/3,1.4,.12,col,4*(1-t)+1);
+   sparks(r,f.x,f.z,rr,1-t,col,detail?15:5,.4);
+  }else if(['chaincast','icecast','piercecast','wavecast','puncture'].includes(s)){
+   // Short launch cues stay at the source; projectiles and hit events draw the actual path.
+   const color=s==='icecast'?'#b2f0ff':col;
+   ribbon(r,f.x,f.z,rr*(.5+t*.5),a-.5,1,.7,color,1-t);
+   if(s==='chaincast')lightning(r,{x:f.x,z:f.z,h:.6},{x:f.x+Math.cos(a),z:f.z+Math.sin(a),h:1.1},color,1.5,t*10);
+  }else if(s==='archers'||s==='golem'){
+   const count=s==='archers'?3:1;
+   for(let i=0;i<count;i++){const angle=i*2.4,x=f.x+Math.cos(angle)*1.1,z=f.z+Math.sin(angle)*1.1;
+    arc(r,x,z,s==='golem'?1:.45,-t*3,TAU,.05,col,2);beam(r,x,z,(s==='golem'?2.5:1.5)*(1-t),.22,col,.3*(1-t));}
+  }else if(s==='fuse'){
+   r.groundCircle(f.x,f.z,rr,'#ffc985',.45,1.5);arc(r,f.x,f.z,rr*.9,-Math.PI/2,TAU*t,.08,'#ffe2aa',3);
+  }else if(['sunwheel','execution','bladestorm'].includes(s)){
    const n=s==='execution'?3:2;for(let i=0;i<n;i++){const angle=a+t*TAU*(s==='sunwheel'?1.25:.65)+i*TAU/n;ribbon(r,f.x,f.z,rr*(.7+t*.3),angle,Math.PI*1.15,.6+i*.18,col,.85);}
    if(s==='execution')for(let i=0;i<3;i++){const angle=a+(i-1)*.7;const q={x:f.x+Math.cos(angle)*rr*.6,z:f.z+Math.sin(angle)*rr*.6};beam(r,q.x,q.z,2,.35,col,.3);}
    sparks(r,f.x,f.z,rr,t,col,detail?20:7,.5);

@@ -184,7 +184,7 @@ export class Game{
     if(p.cls==='knight'&&resource>=5){damage*=1.5;p.chargeResource=0;this.effect('empower',p.x,p.z,'#ffd483',{r:3,life:.5});}
     if(p.cls==='mage'){if(resource>=3){damage*=1.45;p.chargeResource=0;this.effect('empower',p.x,p.z,'#8cddff',{r:3,life:.5});}else if(p.lastSkill!==index&&p.lastSkill>=0)p.chargeResource=Math.min(3,resource+1);p.lastSkill=index;}
     if(p.cls==='assassin'&&index===0){damage*=1+resource*.2;p.chargeResource=0;}
-    const cue=skillCue(p,index,range,point,rune);this.effect(cue.type,cue.x,cue.z,cue.color,cue);this.effect('castsigil',p.x,p.z,CLASSES[p.cls].color,{r:index===2?2.2:1.1,life:.45});
+    const cue=skillCue(p,index,range,p.cls==='assassin'&&index===4?(this.closest(p,range)||p):point,rune);this.effect(cue.type,cue.x,cue.z,cue.color,cue);this.effect('castsigil',p.x,p.z,CLASSES[p.cls].color,{r:index===2?2.2:1.1,life:.45});
     if(p.cls==='knight'){
       if(index===0){const color=rune===2?'#ed9585':'#edc178';this.effect('spin',p.x,p.z,color,{r:range,life:.55});let hits=0;for(const e of this.enemies)if(!e.dead&&distance(p,e)<range+e.r){hits++;this.hitEnemy(e,damage,p,'skill');this.knock(e,p,rune===1?-2.6:3);}if(rune===2&&hits){const heal=Math.min(5,hits)*p.stats.hp*.04;p.hp=Math.min(p.stats.hp,p.hp+heal);this.float(p,'+'+Math.round(heal),'#a7dfb4');}}
       if(index===1){const angle=Math.atan2(p.face.z,p.face.x),spread=rune===1?[-.28,0,.28]:[0];for(const offset of spread)this.fire(p.x,p.z,Math.cos(angle+offset),Math.sin(angle+offset),'wave',damage,p,{speed:12,life:.85,pierce:true,radius:rune===1?.7:1.1,stun:rune===2?3:1.5,kind:'skill'});this.effect('burst',p.x,p.z,'#f1c87e',{r:1.3,life:.35});}
@@ -240,7 +240,7 @@ export class Game{
     if(p.cls==='monk'&&index===1&&p.stats.legends.includes('stillstorm'))this.zone(p.x,p.z,3.8,5,p.stats.damage*.9,p,'thunder',{follow:true});
     if(p.cls==='knight'&&index===0&&p.stats.legends.includes('cyclone'))this.zone(p.x,p.z,range,3,p.stats.damage*.9,p,'cyclone',{});
     if(slot===2&&p.stats.legends.includes('nova'))this.aoe(p.x,p.z,5.5,p.stats.damage*1.8,p,'#bdadff');
-    this.shake=Math.max(this.shake,index===2?6:2.5);this.event('sound',{name:p.cls==='druid'?(index===2?'roar':'nature'):p.cls==='monk'?'thunder':p.cls==='mage'?(index===0?'ice':index===2?'ultimate':'fire'):p.cls==='necromancer'?'soul':index===2?'ultimate':'spell'});return true;
+    this.shake=Math.max(this.shake,index===2?6:2.5);this.event('sound',{name:index>=3?({knight:['roar','heavy'],mage:['thunder','ice'],ranger:['pierce','heal'],assassin:['cast','blade'],necromancer:['soul','soul'],engineer:['cast','heavyshot'],druid:['thunder','heal'],monk:['thunder','heal']}[p.cls][index-3]):p.cls==='druid'?(index===2?'roar':'nature'):p.cls==='monk'?'thunder':p.cls==='mage'?(index===0?'ice':index===2?'ultimate':'fire'):p.cls==='necromancer'?'soul':index===2?'ultimate':'spell'});return true;
   }
   potion(p){if(p.down||p.potionCd>0||p.hp>=p.stats.hp)return false;p.hp=Math.min(p.stats.hp,p.hp+p.stats.hp*.65);p.potionCd=18;this.effect('heal',p.x,p.z,'#8fdfad',{life:1,r:1.5});this.float(p,'+회복','#a2e4b5');this.event('sound',{name:'heal'});return true;}
   fire(x,z,dx,dz,type,damage,owner,opts={}){const shot={id:id(),x,z,dx,dz,type,damage,owner,kind:opts.kind||'basic',speed:opts.speed||9,life:opts.life||2,radius:opts.radius||.33,pierce:opts.pierce||false,stun:opts.stun||0,seeker:opts.seeker||false,color:opts.color,hit:new Set()};this.shots.push(shot);return shot;}

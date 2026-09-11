@@ -12,6 +12,7 @@
     "dev": "node tools/serve.mjs",
     "test": "node tools/test.mjs",
     "test:full": "node tests/full-run.mjs",
-    "test:render": "node tests/render-smoke.mjs"
+    "test:render": "node tests/render-smoke.mjs",
+    "test:ui": "node tests/ui-smoke.mjs"
   }
 }

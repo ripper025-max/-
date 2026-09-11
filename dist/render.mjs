@@ -65,7 +65,7 @@ export class Renderer{
     if(p.bear>0&&!p.down){
       this.groundCircle(p.x,p.z,1.1,'#08130b',.5);const stride=Math.sin(p.walk||0)*.2;part(0,0,1.55,1.9,1.05,'#675744',.55);part(0,.85,1.1,.9,.9,'#8d7956',1.15);part(0,1.33,.64,.35,.36,'#c1ab79',1.18);part(0,1.55,.26,.1,.17,'#292c25',1.38);
       for(const side of [-1,1]){part(side*.6,-.55,.4,.5,.7,'#594d3e',.08+Math.max(0,stride*side));part(side*.64,.6,.44,.5,.75,'#756248',.1+action*.5);part(side*.36,.78,.27,.25,.25,'#5b513e',2);part(side*.32,1.31,.08,.05,.08,'#e5eea7',1.69);for(let i=0;i<3;i++)part(side*.64+(i-1)*.11,.91,.07,.27,.09,'#ece4bf',.23+action*.5);}
-      const label=this.point(p.x,p.z,2.6);c.fillStyle='#e4f0b3';c.font='bold 12px sans-serif';c.textAlign='center';c.fillText(`${p.id+1}P · 곰 ${p.bear.toFixed(1)}초`,label.x,label.y);return;
+      return;
     }
     this.groundCircle(p.x+.12,p.z+.1,.6,'#020a13',.5);this.groundCircle(p.x,p.z,.66,p.id===1?'#7dc6e7':'#c8d18c',.58,1.5);
     const walk=p.walk?Math.sin(p.walk)*.15:0;let hop=action*(pose?.type==='greatsword'?.13:.035);
@@ -99,7 +99,6 @@ export class Renderer{
     part(-.135,.252,.07,.035,.075,'#172a2f',1.75+hop);part(.135,.252,.07,.035,.075,'#172a2f',1.75+hop);
     if(p.hit>0){c.save();c.globalAlpha=p.hit*2.4;this.groundCircle(p.x,p.z,.85,'#ffb6a0');c.restore();}
     if(p.invuln>1&&!title){this.groundCircle(p.x,p.z,.8,'#b6dce2',.35,1.5);this.glow(p.x,p.z,1.5,'#b6dcdf',.13,1);}
-    if(!title){const q=this.point(p.x,p.z,2.65);c.textAlign='center';c.font='bold 11px sans-serif';c.fillStyle=p.id===1?'#9dd6ef':'#e7d7a4';c.shadowColor='#061015';c.shadowBlur=4;c.fillText(`${p.id+1}P`,q.x,q.y);c.shadowBlur=0;}
   }
   enemy(e){
     const c=this.ctx;if(e.dead){c.save();c.globalAlpha=Math.max(0,e.deathT/.65);}
@@ -188,6 +187,8 @@ export class Renderer{
     // Low fog and ember motes sit behind crisp interface typography.
     c.save();c.globalCompositeOperation='screen';for(const a of this.ambient){const xx=(a.x*this.w+Math.sin(this.clock*.17+a.phase)*26)%this.w,yy=((a.y*this.h-this.clock*a.speed*8)%this.h+this.h)%this.h;c.globalAlpha=.13+.12*Math.sin(this.clock+a.phase);c.fillStyle=a.phase>3?'#c4d9d2':'#edc28f';c.fillRect(xx,yy,a.s,a.s);}c.restore();
     for(const drop of g.drops){const p=this.point(drop.x,drop.z,.85);const color=RARITIES[drop.item.rarity].color;c.font='11px sans-serif';c.textAlign='center';const label=`${drop.owner+1}P · ${drop.item.name}`,w=c.measureText(label).width+16;c.fillStyle='#0b1720dd';c.fillRect(p.x-w/2,p.y-13,w,20);c.strokeStyle=color+'88';c.lineWidth=.7;c.strokeRect(p.x-w/2,p.y-13,w,20);c.fillStyle=color;c.fillText(label,p.x,p.y+1);}
+    // Player identifiers remain readable above summons and skill effects.
+    if(!title)for(const p of g.players){const q=this.point(p.x,p.z,p.bear>0?2.9:2.65),label=`${p.id+1}P${p.down?' · 구조 대기':p.bear>0?' · 곰 '+p.bear.toFixed(1)+'초':''}`;c.save();c.font='bold 14px sans-serif';c.textAlign='center';const w=c.measureText(label).width+12;c.fillStyle='#07131ce8';c.fillRect(q.x-w/2,q.y-15,w,22);c.fillStyle=p.id===1?'#9dd6ef':'#e7d7a4';c.fillText(label,q.x,q.y+1);c.restore();}
     for(const t of g.texts){const elapsed=1-t.life/t.total,p=this.point(t.x+t.drift*elapsed,t.z,1.9+elapsed*1.4);c.save();c.globalAlpha=Math.min(1,t.life*4);c.textAlign='center';c.font=`${t.crit?'bold 26':'bold 17'}px sans-serif`;c.strokeStyle='#07131c';c.lineWidth=3;c.strokeText(t.text,p.x,p.y);c.shadowColor='#060a10';c.shadowBlur=4;c.fillStyle=t.color;c.fillText(t.text,p.x,p.y);c.restore();}
   }
   minimap(){fieldMap(this);}

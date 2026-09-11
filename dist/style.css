@@ -32,3 +32,6 @@
 @media(max-width:700px){.class-options{grid-template-columns:repeat(4,minmax(0,1fr))}.class-choice small{display:none}.class-choice{min-height:78px}.class-choice b{font-size:13px}.class-family{display:none}.start-panel{max-height:75vh}}
 
 .skill-select{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}.skill-select span{width:100%;font-size:12px;color:#c7b98f}.skill-select button{font-size:12px;padding:6px 8px}.synergy-list{display:grid;gap:10px;margin-bottom:20px}.synergy-list article{padding:12px;border-left:3px solid #e3b676;background:#b2843915}.synergy-list p{font-size:14px;line-height:1.6;color:#c1ccd0}
+
+/* Keep selected rune names readable without hiding the key or resource cost. */
+.skill-button small{white-space:normal;overflow-wrap:anywhere;line-height:1.2;max-height:2.4em;overflow:hidden}.skill-select span,.skill-select button,.rune-choice small{font-size:14px}.skill-select button{min-height:36px}.skill-select button.selected{border-color:#ebc583;background:#6b512b;color:#fff2cb}
