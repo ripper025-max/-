@@ -4,7 +4,7 @@
 
 - 공유 개발 저장소: https://github.com/ripper025-max/-
 - 공개 게임: https://emberfall-dungeons.limsingeol.chatgpt.site
-- 다른 PC / Codex에서 이어서 작업: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md)
+- 다른 PC / Codex에서 시작: **[CODEX_START_HERE.md](CODEX_START_HERE.md)**. 추가 안내: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md)
 
 Node.js 22+에서 `npm start` 후 http://127.0.0.1:4173 을 연다. 설치나 빌드가 필요 없다. `dist/`가 편집 가능한 원본이다. Windows는 `START_GAME.cmd`로 실행할 수도 있다.
 

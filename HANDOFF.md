@@ -1,11 +1,13 @@
 # 집의 Codex에서 이어서 작업하기
 
+먼저 [CODEX_START_HERE.md](CODEX_START_HERE.md)를 읽는다. 요구사항·구현·검증·다음 작업을 한곳에 정리했다.
+
 ## 현재 상태
 
 - EMBERFALL · 잿불의 성역, 한국어 브라우저 RPG. v4 소스는 이 저장소에 보관한다.
 - 공유 저장소: https://github.com/ripper025-max/-
 - 공개 게임: https://emberfall-dungeons.limsingeol.chatgpt.site
-- GitHub 반영과 Sites 공개는 별도 작업이다. 실제 공개 상태는 배포 결과로 확인한다.
+- v4 공개 성공 확인. 게임 소스는 GitHub와 동일하며 이후 인계 정리는 문서만 변경한다. GitHub 반영과 Sites 공개는 별도 작업이다.
 - 최신 확정 방향과 기능은 README.md / DESIGN.md를 읽는다. 과거 6직업·10무기·4개 생태 구역 설계는 폐기됐다.
 
 ## 실행

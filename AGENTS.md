@@ -1,12 +1,12 @@
 # EMBERFALL · 잿불의 성역
 
-This is the existing Korean action RPG requested by the user. Continue this implementation; do not recreate it from the public game URL or replace it with a framework scaffold. Read README.md and HANDOFF.md first.
+This is the existing Korean action RPG requested by the user. Continue this implementation; do not recreate it from the public game URL or replace it with a framework scaffold. Read CODEX_START_HERE.md, README.md and HANDOFF.md first.
 
 ## Source and runtime
 
 - `dist/` contains the authored, editable game source. No build or external game dependency is required.
 - Use Node.js 22+ and `npm start` for a local server at http://127.0.0.1:4173. There is no mandatory npm install step.
-- `npm test` runs the core combat, legacy-save, arsenal and open-world checks. `npm run test:full` runs eight input-driven combat simulations. `npm run test:render` requires optional @napi-rs/canvas; skip with an explanation if unavailable.
+- `npm test` runs the core combat, legacy-save, arsenal and open-world checks. `npm run test:full` runs eleven input-driven combat simulations. `npm run test:render` requires optional @napi-rs/canvas; skip with an explanation if unavailable.
 - Preserve localStorage key `emberfall.save.v1`, saved inventory, growth, currencies, runes and build presets. Never reset player data without authorization.
 
 ## User-approved direction
