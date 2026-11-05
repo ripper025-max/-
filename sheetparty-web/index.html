@@ -3,6 +3,7 @@
 </style></head><body><header class="bar"><b>▣　프로젝트 운영 현황 · 통합 업무표</b><button id="switch">업무 화면 [ &#96; ]</button></header><div class="tabs"><b>홈</b><span>삽입</span><span>데이터</span><span>검토</span><span>보기</span></div><div class="ribbon"><span>클립보드<br><small>붙여넣기 / 복사</small></span><span>글꼴<br><small>맑은 고딕 · 11</small></span><span>맞춤<br><small>텍스트 / 정렬</small></span><button class="btn" id="csv">CSV 내보내기</button></div><div class="formula"><b>B4</b><b>fx</b><input id="formula" placeholder="셀 입력"></div><div id="letters" class="letters"></div><div class="main"><div id="game" class="sheet"></div><div id="safe" class="sheet safe hidden"></div></div><div class="bottom"><button id="gameTab" class="active">운영 데이터</button><button id="safeTab">프로젝트 현황</button><span class="muted" id="status">준비</span></div>
 <script>
 (function(){
+var localStorage={getItem:function(k){try{return window.localStorage.getItem(k)}catch(e){return null}},setItem:function(k,v){try{window.localStorage.setItem(k,v)}catch(e){}}};
 var $=function(id){return document.getElementById(id)},x=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
 var words=['고양이','아이스크림','공룡','전시부스','치킨','비행기','축구공','핸드폰','수박','악어','자전거','우주선','라면','해바라기','로봇','강아지','선풍기','소방차','냉장고','피자','펭귄','햄버거','지하철','신호등','카메라','공룡','오징어','마술사'];
 var colors=['#202832','#ee5252','#f39a3b','#eec340','#3eab6b','#289faa','#397cca','#8556be','#ac7451','#ffffff'];
