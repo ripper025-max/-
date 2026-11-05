@@ -51,7 +51,7 @@ var words=['고양이','아이스크림','공룡','전시부스','치킨','비�
 var colors=['#202832','#ee5252','#f39a3b','#eec340','#3eab6b','#289faa','#397cca','#8556be','#ac7451','#ffffff'];
 var p={id:'',peer:null,conn:null,links:{},host:false,code:'',name:'',mode:'classic',active:false,word:'',task:null,draw:[],color:colors[0],size:5,press:false,prev:null,album:0,turn:-1},s={phase:'home',mode:'classic',players:[],turn:0,drawer:'',deadline:0,strokes:[],chat:[],guessed:{},albums:[],step:0,done:{}};
 var headings=['번호','구분','프로젝트명','담당','시작일','종료일','진행률','예산','비고'];
-var seeded=[['01','전시','기업 홍보관 조성','설계팀','2026-11-09','2026-11-18','70%','12500000','출력 검수'],['02','행사','산업박람회 부스','제작팀','2026-11-11','2026-11-20','45%','8600000','구조제작'],['03','디자인','브랜드 쇼룸 수정','디자인팀','2026-11-12','2026-11-25','25%','15300000','시안 수정']];
+var seeded=[['01','경영지원','월간 운영 보고서','지원팀','2026-11-02','2026-11-06','75%','350000','검토'],['02','영업','거래처 실적 현황','영업팀','2026-11-03','2026-11-09','60%','0','자료 취합'],['03','인사','신입직원 교육','인사팀','2026-11-04','2026-11-11','80%','1200000','교육 자료']];
 var sheet;try{sheet=JSON.parse(localStorage.getItem('sheetparty-sheet'));if(!Array.isArray(sheet))throw 1}catch(e){sheet=Array.from({length:22},function(_,i){return seeded[i]||[i+1,'','','','','','','','']})}
 function status(t){$('status').textContent=t}
 
