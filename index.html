@@ -153,7 +153,15 @@ header.scroll-down{transform:translateY(-100%)}header.scroll-up{transform:transl
 #v35-hero-overrides{display:none}
 @media(max-width:760px){#v35-progress-track{width:65px}.hero-bottom{bottom:16px}#v35-hero-button{padding:7px 10px}#v35-demo-disclaimer{bottom:98px}}
 @media(prefers-reduced-motion:reduce){.hero-copy .kicker,.hero-copy h1,.hero-copy p,.hero-copy .hero-action,.hero-image.active,#v35-progress-bar{animation:none!important}.reveal{filter:none!important;opacity:1!important;transform:none!important}}
-</style></head><body>
+</style><style id="ylabs-cad-impact-v4">
+/* Slide 2: editorial CAD floorplan treatment. Original photographs in slides 1 and 3 remain unchanged. */
+.hero-image[data-photo-slot="1"]{object-position:60% 50%;filter:contrast(1.1) brightness(1.07)}
+.hero-image[data-photo-slot="1"].active{animation:cadDolly 7.5s cubic-bezier(.18,.56,.26,1) both}
+@keyframes cadDolly{from{transform:scale(1.13) translate3d(1.2%,.4%,0)}to{transform:scale(1.025) translate3d(0,0,0)}}
+.hero:has(.hero-image[data-photo-slot="1"].active) .shade{background:linear-gradient(90deg,rgba(4,9,12,.86) 0%,rgba(4,9,12,.65) 36%,rgba(4,9,12,.08) 72%),linear-gradient(0deg,rgba(1,9,12,.3),transparent 42%)}
+@media(prefers-reduced-motion:reduce){.hero-image[data-photo-slot="1"].active{animation:none;transform:none}}
+</style>
+</head><body>
 <header id="header"><a class="logo" href="#top"><span class="ylabs-wordmark" aria-label="DESIGN Y LABS"><span>DESIGN</span><span class="ylabs-orange-y">Y</span><span>LABS</span></span></a><button class="menu" id="menu" aria-label="메뉴">☰</button><nav class="nav" id="nav"><div class="nav-drop"><a href="#projects" id="projects-dropdown" aria-haspopup="true">PROJECTS ▾</a><div class="drop-options"><a href="#projects" data-year-link="all">ALL PROJECTS</a><a href="#projects" data-year-link="2026">2026 PROJECTS</a><a href="#projects" data-year-link="2025">2025 PROJECTS</a><a href="#projects" data-year-link="2024">2024 PROJECTS</a></div></div><a href="#philosophy">PHILOSOPHY</a><a href="#studio">STUDIO</a><a href="#contact">CONTACT</a><a id="admin-link" href="./admin.html" title="로컬 편집 시안 (로그인 보호 없음)">EDITOR ↗</a></nav></header>
 <main>
 <section class="hero" id="top">
