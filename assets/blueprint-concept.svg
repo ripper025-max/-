@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050"><defs><linearGradient id="bg" x2="1" y2=".6"><stop stop-color="#061220"/><stop offset="1" stop-color="#122d41"/></linearGradient><pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#79b2d7" stroke-width=".6" stroke-opacity=".21"/></pattern></defs><rect width="1800" height="1050" fill="url(#bg)"/><rect width="1800" height="1050" fill="url(#g)"/><g fill="none" stroke="#91d7f9" stroke-width="3" opacity=".85"><path d="M850 160H1520V735H850Z"/><path d="M930 260H1390V610H930Z"/><path d="M930 260L1090 370H1390M930 610L1090 485H1390"/><path d="M1030 160V735M1240 160V735"/><circle cx="1160" cy="439" r="140"/><circle cx="1160" cy="439" r="78"/><path d="M900 820H1500M900 803V837M1500 803V837"/><path d="M810 200H750V700H810M740 200H820M740 700H820"/><path d="M1280 120L1410 70M1270 80L1400 30"/></g><g stroke="#ff862f" stroke-width="5" fill="none"><path d="M990 290H1140V325H990Z"/><path d="M1400 620H1550M1475 545V695"/><circle cx="1475" cy="620" r="27"/></g><g fill="#d5eafa" font-family="Arial,sans-serif" letter-spacing="3" opacity=".8"><text x="1020" y="855" font-size="23">SPATIAL EXPERIENCE / FLOOR PLAN</text><text x="1150" y="935" font-size="15">Y-LABS / SCALE 1:100</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="전시부스 설계도면 콘셉트">
+<defs>
+<linearGradient id="b" x2="1" y2="1"><stop stop-color="#07121e"/><stop offset="1" stop-color="#13283a"/></linearGradient>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#7eb0d0" stroke-opacity=".16" stroke-width=".8"/></pattern>
+<pattern id="m" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="#7eb0d0" stroke-opacity=".055" stroke-width=".7"/></pattern>
+<linearGradient id="lines" x2="0" y2="1"><stop stop-color="#d2ecff"/><stop offset="1" stop-color="#7cbfe6"/></linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#b)"/><rect width="1920" height="1080" fill="url(#m)"/><rect width="1920" height="1080" fill="url(#g)"/>
+<g transform="translate(680 150)" stroke="url(#lines)" fill="none" stroke-linejoin="round">
+<!-- overhead large wave-shaped exhibition signage: plan/isometric technical lines -->
+<path stroke-width="4" d="M50 290Q290 105 650 135Q930 145 1080 245L1080 328Q912 246 655 238Q323 213 50 392Z"/>
+<path stroke-width="2" opacity=".58" d="M50 290L50 392M1080 245L1080 328M50 392Q315 275 655 295Q920 301 1080 328M50 340Q301 175 652 192Q927 208 1080 281"/>
+<path stroke-width="3" d="M170 430L170 780L630 870L1008 725L1008 360M170 430L630 540L1008 360M630 540L630 870"/>
+<path stroke-width="2" opacity=".55" d="M215 465L215 740L630 821L965 690L965 405M215 465L630 570L965 405M630 570L630 821"/>
+<path stroke-width="2" d="M215 610L630 706L965 558M370 499L370 772M815 484L815 762"/>
+<path stroke-width="2.5" d="M246 610L390 646L390 740L246 708Z M680 680L910 589L910 686L680 775Z"/>
+<!-- truss overhead -->
+<path stroke-width="2.5" d="M85 270L230 115L860 115L1030 255M85 300L230 145L860 145L1030 286M230 115L230 145M860 115L860 145"/>
+<path stroke-width="1.5" opacity=".7" d="M230 115L290 145L350 115L410 145L470 115L530 145L590 115L650 145L710 115L770 145L830 115M230 145L290 115L350 145L410 115L470 145L530 115L590 145L650 115L710 145L770 115L830 145"/>
+</g>
+<g fill="none" stroke="#c1dbec" stroke-width="2" opacity=".67"><path d="M800 977H1700M800 960V994M1700 960V994M1750 292V900M1733 292H1767M1733 900H1767"/><path d="M815 125H1635M815 113V137M1635 113V137"/></g>
+<g stroke="#fa8735" stroke-width="3" fill="none"><circle cx="1190" cy="520" r="22"/><path d="M1168 520H1212M1190 498V542"/><circle cx="1460" cy="660" r="18"/></g>
+<g fill="#b2d6ec" font-family="Arial,Helvetica,sans-serif" letter-spacing="3"><text x="807" y="1030" font-size="18">SECTION / ISOMETRIC STUDY</text><text x="1555" y="1040" font-size="17">SCALE 1 : 100</text><text x="813" y="190" font-size="17">EXHIBITION STRUCTURE</text><text x="1588" y="253" font-size="14">ELEVATION A-A</text></g>
+</svg>
