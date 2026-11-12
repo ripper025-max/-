@@ -44,14 +44,26 @@ html,body,button,input,select,textarea{font-family:"Freesentation","Malgun Gothi
 .brand-phrase{font-family:"Freesentation",sans-serif!important;font-weight:850;letter-spacing:-.075em}
 .brand-phrase em{font-style:normal;color:var(--orange)}
 @media(max-width:500px){.contact h2{font-size:clamp(34px,10vw,55px);overflow-wrap:anywhere;letter-spacing:-.055em}.hero h1{font-size:clamp(36px,10vw,54px)}.logo{font-size:18px}}
+</style><style id="ylabs-brand-hero-fixes">
+/* Shared scalable mark eliminates differences between header/footer letter spacing. */
+.logo,.footer-logo{display:inline-flex;align-items:center;line-height:1;color:#232827;letter-spacing:0!important}
+.brand-mark{display:block;width:157px;height:auto;max-width:100%;overflow:visible}
+.footer-logo{color:#f5f5f3}.footer-logo .brand-mark{width:175px}
+.hero-copy h1{font-weight:640;letter-spacing:-.052em}.hero-copy h1 i{font-weight:390}
+.hero-copy p{font-weight:400}
+.hero-copy{transition:opacity .5s,transform .5s}
+.hero-copy.switching{opacity:0;transform:translateY(calc(-50% + 16px))}
+.hero-copy .kicker{font-size:11px}
+.hero-bottom .slider{gap:12px}
+@media(max-width:600px){.brand-mark{width:146px}.footer-logo .brand-mark{width:165px}.hero-copy h1{font-size:clamp(39px,9vw,58px)}}
 </style></head><body>
-<header id="header"><a class="logo" href="#top">DESIGN<em>Y</em>LABS</a><button class="menu" id="menu" aria-label="메뉴">☰</button><nav class="nav" id="nav"><div class="nav-drop"><a href="#projects" id="projects-dropdown" aria-haspopup="true">PROJECTS ▾</a><div class="drop-options"><a href="#projects" data-year-link="all">ALL PROJECTS</a><a href="#projects" data-year-link="2026">2026 PROJECTS</a><a href="#projects" data-year-link="2025">2025 PROJECTS</a><a href="#projects" data-year-link="2024">2024 PROJECTS</a></div></div><a href="#philosophy">PHILOSOPHY</a><a href="#studio">STUDIO</a><a href="#contact">CONTACT</a><a id="admin-link" href="./admin.html" title="로컬 편집 시안 (로그인 보호 없음)">EDITOR ↗</a></nav></header>
+<header id="header"><a class="logo" href="#top"><svg class="brand-mark" viewBox="0 0 254 54" role="img" aria-label="DESIGN Y LABS" xmlns="http://www.w3.org/2000/svg"><text x="0" y="40" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="39" letter-spacing="-2.7" fill="currentColor">DESIGN</text><path d="M145 9 L153 9 L165 25 L177 9 L185 9 L169 32 L169 41 L161 41 L161 32 Z" fill="#ED731F"/><text x="186" y="40" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="39" letter-spacing="-2.4" fill="currentColor">LABS</text></svg></a><button class="menu" id="menu" aria-label="메뉴">☰</button><nav class="nav" id="nav"><div class="nav-drop"><a href="#projects" id="projects-dropdown" aria-haspopup="true">PROJECTS ▾</a><div class="drop-options"><a href="#projects" data-year-link="all">ALL PROJECTS</a><a href="#projects" data-year-link="2026">2026 PROJECTS</a><a href="#projects" data-year-link="2025">2025 PROJECTS</a><a href="#projects" data-year-link="2024">2024 PROJECTS</a></div></div><a href="#philosophy">PHILOSOPHY</a><a href="#studio">STUDIO</a><a href="#contact">CONTACT</a><a id="admin-link" href="./admin.html" title="로컬 편집 시안 (로그인 보호 없음)">EDITOR ↗</a></nav></header>
 <main>
 <section class="hero" id="top">
 <img class="hero-image active" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85" alt="건축 공간 임시 이미지">
 <img class="hero-image" src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?w=1800&q=85" alt="건축 공간 임시 이미지">
 <img class="hero-image" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1800&q=85" alt="건축 공간 임시 이미지">
-<div class="shade"></div><div class="hero-copy"><div class="kicker">DESIGN Y LABS · EXHIBITION & SPATIAL DESIGN</div><h1>공간의 본질에서<br><i>경험의 가치까지.</i></h1><p>브랜드의 가치를 공간에 담고,<br>사람의 경험으로 완성합니다.</p><a class="hero-action" href="#projects">EXPLORE SELECTED WORKS ↗</a></div>
+<div class="shade"></div><div class="hero-copy"><div class="kicker" id="hero-kicker">DESIGN Y LABS · EXHIBITION & SPATIAL DESIGN</div><h1 id="hero-headline">공간의 본질에서<br><i>경험의 가치까지.</i></h1><p id="hero-description">브랜드의 가치를 공간에 담고,<br>사람의 경험으로 완성합니다.</p><a class="hero-action" href="#projects">EXPLORE SELECTED WORKS ↗</a></div>
 <div class="hero-bottom"><div class="slider"><span id="slide-index">01 / 03</span><button id="previous" aria-label="이전 슬라이드">‹</button><button id="next" aria-label="다음 슬라이드">›</button></div><small>START WITH Y · SCROLL TO EXPLORE ↓</small></div>
 </section>
 <div class="sample">현재 사진은 레이아웃 확인용 임시 이미지입니다. 공식 포트폴리오 사진으로 교체 후 게시하십시오.</div>
@@ -63,7 +75,7 @@ html,body,button,input,select,textarea{font-family:"Freesentation","Malgun Gothi
 <section class="section" id="studio"><div class="heading reveal"><div><div class="label">DESIGN Y LABS STUDIO</div><h2>Design beyond<br>the space.</h2></div><p>Established 2024.05<br>Founder Experience Since 2002</p></div><div class="services"><div class="service reveal"><small>01 /</small><h3>Exhibition & Pavilion</h3><p>기업 홍보관, 전시부스, 공동관, 전시 기획 및 시공</p></div><div class="service reveal"><small>02 /</small><h3>Spatial Design</h3><p>전시 체험 공간, 상설 전시, 공간 연출 및 디자인</p></div><div class="service reveal"><small>03 /</small><h3>Brand Experience</h3><p>브랜드 공간, 야외 이벤트, 프로모션 및 공공행사</p></div></div></section>
 <section class="contact" id="contact"><div class="label">CONTACT DESIGN Y LABS</div><h2>Let's create<br>something <em>meaningful.</em></h2><div class="contact-row"><p>당신의 다음 공간은 어떤 경험이 되어야 할까요?<br>프로젝트의 목적부터 함께 고민하겠습니다.</p><a href="mailto:errorbug@naver.com?subject=DESIGN%20Y%20LABS%20Project%20Inquiry" class="contact-link">PROJECT INQUIRY ↗</a></div></section>
 </main>
-<footer><div class="foot-main"><div><strong class="footer-logo">DESIGN<em>Y</em>LABS</strong><p>START WITH Y.<br>EXHIBITION · SPATIAL DESIGN · BRAND PAVILION</p></div><p>서울시 금천구 가산디지털1로 181<br>가산더블유센터 7층 714호<br>errorbug@naver.com</p></div><div class="foot-base"><span>© 2026 DESIGN Y LABS. ALL RIGHTS RESERVED.</span><a href="#top">BACK TO TOP ↑</a></div></footer><button id="motion-toggle" aria-pressed="true">ANIMATION ON</button>
+<footer><div class="foot-main"><div><strong class="footer-logo"><svg class="brand-mark" viewBox="0 0 254 54" role="img" aria-label="DESIGN Y LABS" xmlns="http://www.w3.org/2000/svg"><text x="0" y="40" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="39" letter-spacing="-2.7" fill="currentColor">DESIGN</text><path d="M145 9 L153 9 L165 25 L177 9 L185 9 L169 32 L169 41 L161 41 L161 32 Z" fill="#ED731F"/><text x="186" y="40" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="39" letter-spacing="-2.4" fill="currentColor">LABS</text></svg></strong><p>START WITH Y.<br>EXHIBITION · SPATIAL DESIGN · BRAND PAVILION</p></div><p>서울시 금천구 가산디지털1로 181<br>가산더블유센터 7층 714호<br>errorbug@naver.com</p></div><div class="foot-base"><span>© 2026 DESIGN Y LABS. ALL RIGHTS RESERVED.</span><a href="#top">BACK TO TOP ↑</a></div></footer><button id="motion-toggle" aria-pressed="true">ANIMATION ON</button>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="프로젝트 상세"><div class="panel"><div class="panel-head"><span>DESIGN Y LABS / PROJECT DETAIL</span><button id="close" aria-label="닫기">닫기 ×</button></div><h2 id="modal-title"></h2><img id="modal-photo" alt="프로젝트 임시 사진"><div class="panel-control"><button id="gallery-prev">←</button><span id="gallery-count"></span><button id="gallery-next">→</button></div><p id="modal-description"></p><div class="facts"><div><small>CLIENT</small><b id="modal-client"></b></div><div><small>ROLE</small><b id="modal-role"></b></div><div><small>PORTFOLIO SOURCE</small><b id="modal-source"></b></div></div></div></div>
 <script>
 const photos=[
@@ -89,7 +101,24 @@ const grid=document.getElementById("grid");const reduced=matchMedia("(prefers-re
 projects.forEach((p,i)=>{p.year=Number((p.title.match(/20\\d{2}/)||[])[0])||0;p._original=i});projects.sort((a,b)=>b.year-a.year||a._original-b._original);
 projects.forEach((p,i)=>{const original=p._original;const c=document.createElement("article");c.className="card reveal "+(i===0||i===5?"wide":i===1||i===4?"big":i===2||i===3?"small":"");c.tabIndex=0;c.setAttribute("role","button");c.dataset.category=p.category;c.dataset.year=String(p.year);c.dataset.index=String(i);c.innerHTML='<div class="photo"><img loading="lazy" src="'+photos[original]+'" alt="프로젝트 레이아웃 임시 이미지"><span class="placeholder">SAMPLE VISUAL</span><span class="arrow">↗</span></div><div class="card-meta"><div><h3></h3><p></p></div><span class="card-num">'+String(i+1).padStart(2,"0")+'</span></div>';c.querySelector("h3").textContent=p.title;c.querySelector("p").textContent=p.category.toUpperCase()+" · "+p.role;c.addEventListener("click",()=>openProject(i));c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(i)}});grid.appendChild(c)});
 const hero=[...document.querySelectorAll(".hero-image")];let slide=0,interval;
-function selectSlide(n){slide=(n+hero.length)%hero.length;hero.forEach((img,i)=>img.classList.toggle("active",i===slide));document.getElementById("slide-index").textContent=String(slide+1).padStart(2,"0")+" / 03";}
+const heroScenes=[
+{eyebrow:"DESIGN Y LABS · EXHIBITION & SPATIAL DESIGN",title:"공간의 본질에서<br><i>경험의 가치까지.</i>",description:"브랜드의 가치를 공간에 담고,<br>사람의 경험으로 완성합니다."},
+{eyebrow:"EXHIBITION · DESIGN & BUILD",title:"브랜드의 메시지를<br><i>공간의 경험으로.</i>",description:"기획부터 설계, 시공까지.<br>완성도 높은 전시 경험을 만듭니다."},
+{eyebrow:"START WITH Y · DESIGN PHILOSOPHY",title:"모든 공간은<br><i>하나의 WHY에서.</i>",description:"질문은 선이 되고, 선은 구조가 되며,<br>구조는 경험이 됩니다."}
+];
+function selectSlide(n){
+slide=(n+hero.length)%hero.length;
+const scene=heroScenes[slide],copy=document.querySelector(".hero-copy");
+copy.classList.add("switching");
+setTimeout(()=>{
+hero.forEach((img,i)=>img.classList.toggle("active",i===slide));
+document.getElementById("hero-kicker").textContent=scene.eyebrow;
+document.getElementById("hero-headline").innerHTML=scene.title;
+document.getElementById("hero-description").innerHTML=scene.description;
+document.getElementById("slide-index").textContent=String(slide+1).padStart(2,"0")+" / 03";
+copy.classList.remove("switching");
+},160);
+}
 function restart(){clearInterval(interval);if(!reduced)interval=setInterval(()=>selectSlide(slide+1),7500)}
 document.getElementById("previous").onclick=()=>{selectSlide(slide-1);restart()};document.getElementById("next").onclick=()=>{selectSlide(slide+1);restart()};document.addEventListener("visibilitychange",()=>{if(document.hidden)clearInterval(interval);else restart()});restart();
 document.getElementById("menu").onclick=()=>document.getElementById("nav").classList.toggle("open");
