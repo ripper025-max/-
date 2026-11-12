@@ -160,7 +160,7 @@ header.scroll-down{transform:translateY(-100%)}header.scroll-up{transform:transl
 <img class="hero-image active" data-photo-slot="0" src="assets/truss-concept.svg" alt="트러스 구조 컨셉 비주얼 — 실사진 등록 필요">
 <img class="hero-image" data-photo-slot="1" src="assets/blueprint-concept.svg" alt="설계 도면 스타일 컨셉 비주얼">
 <img class="hero-image" data-photo-slot="2" src="assets/booth-concept.svg" alt="전시공간 컨셉 비주얼 — 실사진 등록 필요">
-<div class="shade"></div><div class="hero-copy"><div class="kicker" id="hero-kicker">DESIGN Y LABS · EXHIBITION & SPATIAL DESIGN</div><h1 id="hero-headline">공간의 본질에서<br><i>경험의 가치까지.</i></h1><p id="hero-description">브랜드의 가치를 공간에 담고,<br>사람의 경험으로 완성합니다.</p><a class="hero-action" href="#projects">EXPLORE SELECTED WORKS ↗</a></div>
+<div class="shade"></div><div class="hero-copy"><div class="kicker" id="hero-kicker">FIELD & STRUCTURE · DESIGN YLABS</div><h1 id="hero-headline">현장을 이해하는<br><i>설계의 시작.</i></h1><p id="hero-description">구조와 시공의 흐름을 이해하고,<br>현실적인 공간을 설계합니다.</p><a class="hero-action" href="#projects">EXPLORE SELECTED WORKS ↗</a></div>
 <div class="hero-bottom"><div class="slider"><span id="slide-index">01 / 03</span><span id="v35-progress-track"><span id="v35-progress-bar"></span></span><button id="previous" aria-label="이전 슬라이드">‹</button><button id="next" aria-label="다음 슬라이드">›</button></div><button type="button" id="v35-hero-button" aria-label="메인 사진 변경">메인 사진 수정 ↗</button></div>
 <div id="v35-demo-disclaimer">시공 사진 2장: 홈페이지 내 메인 사진 수정에서 원본 등록 가능</div>
 </section>
@@ -213,9 +213,9 @@ projects.forEach((p,i)=>{p.year=Number((p.title.match(/20\\d{2}/)||[])[0])||0;p.
 projects.forEach((p,i)=>{const original=p._original;const c=document.createElement("article");c.className="card reveal "+(i===0||i===5?"wide":i===1||i===4?"big":i===2||i===3?"small":"");c.tabIndex=0;c.setAttribute("role","button");c.dataset.category=p.category;c.dataset.year=String(p.year);c.dataset.index=String(i);c.innerHTML='<div class="photo"><img loading="lazy" src="'+photos[original]+'" alt="프로젝트 레이아웃 임시 이미지"><span class="placeholder">SAMPLE VISUAL</span><span class="arrow">↗</span></div><div class="card-meta"><div><h3></h3><p></p></div><span class="card-num">'+String(i+1).padStart(2,"0")+'</span></div>';c.querySelector("h3").textContent=p.title;c.querySelector("p").textContent=p.category.toUpperCase()+" · "+p.role;c.addEventListener("click",()=>openProject(i));c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(i)}});grid.appendChild(c)});
 const hero=[...document.querySelectorAll(".hero-image")];let slide=0,interval;
 const heroScenes=[
-{eyebrow:"DESIGN Y LABS · EXHIBITION & SPATIAL DESIGN",title:"공간의 본질에서<br><i>경험의 가치까지.</i>",description:"브랜드의 가치를 공간에 담고,<br>사람의 경험으로 완성합니다."},
-{eyebrow:"EXHIBITION · DESIGN & BUILD",title:"브랜드의 메시지를<br><i>공간의 경험으로.</i>",description:"기획부터 설계, 시공까지.<br>완성도 높은 전시 경험을 만듭니다."},
-{eyebrow:"START WITH Y · DESIGN PHILOSOPHY",title:"모든 공간은<br><i>하나의 WHY에서.</i>",description:"질문은 선이 되고, 선은 구조가 되며,<br>구조는 경험이 됩니다."}
+{eyebrow:"FIELD & STRUCTURE · DESIGN YLABS",title:"현장을 이해하는<br><i>설계의 시작.</i>",description:"구조와 시공의 흐름을 이해하고,<br>현실적인 공간을 설계합니다."},
+{eyebrow:"BLUEPRINT & PLANNING · START WITH Y",title:"도면에서 시작해<br><i>공간으로 완성합니다.</i>",description:"질문은 선이 되고, 선은 구조가 되어<br>브랜드 경험으로 이어집니다."},
+{eyebrow:"BUILT WORKS · ON SITE",title:"현장에서 완성되는<br><i>브랜드 경험.</i>",description:"설계부터 구현까지.<br>완성된 전시 공간이 브랜드를 전달합니다."}
 ];
 function selectSlide(n){
 slide=(n+hero.length)%hero.length;
