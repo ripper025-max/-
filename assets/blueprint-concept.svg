@@ -1,24 +1,236 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="전시부스 설계도면 콘셉트">
-<defs>
-<linearGradient id="b" x2="1" y2="1"><stop stop-color="#07121e"/><stop offset="1" stop-color="#13283a"/></linearGradient>
-<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#7eb0d0" stroke-opacity=".16" stroke-width=".8"/></pattern>
-<pattern id="m" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="#7eb0d0" stroke-opacity=".055" stroke-width=".7"/></pattern>
-<linearGradient id="lines" x2="0" y2="1"><stop stop-color="#d2ecff"/><stop offset="1" stop-color="#7cbfe6"/></linearGradient>
-</defs>
-<rect width="1920" height="1080" fill="url(#b)"/><rect width="1920" height="1080" fill="url(#m)"/><rect width="1920" height="1080" fill="url(#g)"/>
-<g transform="translate(680 150)" stroke="url(#lines)" fill="none" stroke-linejoin="round">
-<!-- overhead large wave-shaped exhibition signage: plan/isometric technical lines -->
-<path stroke-width="4" d="M50 290Q290 105 650 135Q930 145 1080 245L1080 328Q912 246 655 238Q323 213 50 392Z"/>
-<path stroke-width="2" opacity=".58" d="M50 290L50 392M1080 245L1080 328M50 392Q315 275 655 295Q920 301 1080 328M50 340Q301 175 652 192Q927 208 1080 281"/>
-<path stroke-width="3" d="M170 430L170 780L630 870L1008 725L1008 360M170 430L630 540L1008 360M630 540L630 870"/>
-<path stroke-width="2" opacity=".55" d="M215 465L215 740L630 821L965 690L965 405M215 465L630 570L965 405M630 570L630 821"/>
-<path stroke-width="2" d="M215 610L630 706L965 558M370 499L370 772M815 484L815 762"/>
-<path stroke-width="2.5" d="M246 610L390 646L390 740L246 708Z M680 680L910 589L910 686L680 775Z"/>
-<!-- truss overhead -->
-<path stroke-width="2.5" d="M85 270L230 115L860 115L1030 255M85 300L230 145L860 145L1030 286M230 115L230 145M860 115L860 145"/>
-<path stroke-width="1.5" opacity=".7" d="M230 115L290 145L350 115L410 145L470 115L530 145L590 115L650 145L710 115L770 145L830 115M230 145L290 115L350 145L410 115L470 145L530 115L590 145L650 115L710 145L770 115L830 145"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="전시부스 CAD 설계 평면도, 사선 구도"><defs>
+<linearGradient id="bg" x1="0" x2="1" y1=".6" y2="0"><stop stop-color="#070c10"/><stop offset=".48" stop-color="#0a1117"/><stop offset="1" stop-color="#10222a"/></linearGradient>
+<pattern id="gridSmall" width="27" height="27" patternUnits="userSpaceOnUse"><path d="M27 0H0V27" stroke="#6597a5" stroke-width=".65" stroke-opacity=".075" fill="none"/></pattern>
+<pattern id="gridBig" width="135" height="135" patternUnits="userSpaceOnUse"><path d="M135 0H0V135" stroke="#6794a1" stroke-width="1.1" stroke-opacity=".11" fill="none"/></pattern>
+<linearGradient id="fadeLeft"><stop offset="0" stop-color="#080e12" stop-opacity=".98"/><stop offset=".47" stop-color="#080e12" stop-opacity=".55"/><stop offset="1" stop-color="#080e12" stop-opacity="0"/></linearGradient>
+<filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+<rect width="1920" height="1080" fill="url(#bg)"/><rect width="1920" height="1080" fill="url(#gridSmall)"/><rect width="1920" height="1080" fill="url(#gridBig)"/>
+<g opacity=".36" stroke="#7199a0" stroke-width="1" fill="none">
+<path d="M1000 -60L2030 780M1110 -60L2030 687M1220 -60L2030 595M1330 -60L2030 502"/>
+<path d="M720 1000L1820 -80M840 1100L1920 45M980 1160L1990 180"/>
 </g>
-<g fill="none" stroke="#c1dbec" stroke-width="2" opacity=".67"><path d="M800 977H1700M800 960V994M1700 960V994M1750 292V900M1733 292H1767M1733 900H1767"/><path d="M815 125H1635M815 113V137M1635 113V137"/></g>
-<g stroke="#fa8735" stroke-width="3" fill="none"><circle cx="1190" cy="520" r="22"/><path d="M1168 520H1212M1190 498V542"/><circle cx="1460" cy="660" r="18"/></g>
-<g fill="#b2d6ec" font-family="Arial,Helvetica,sans-serif" letter-spacing="3"><text x="807" y="1030" font-size="18">SECTION / ISOMETRIC STUDY</text><text x="1555" y="1040" font-size="17">SCALE 1 : 100</text><text x="813" y="190" font-size="17">EXHIBITION STRUCTURE</text><text x="1588" y="253" font-size="14">ELEVATION A-A</text></g>
+<path d="M760 0L1920 0L1920 155" fill="none" stroke="#b1e4e6" stroke-opacity=".48" stroke-width="1.6"/>
+<g transform="translate(760,92) rotate(-17 640 405)" stroke-linejoin="round" stroke-linecap="square">
+<rect x="65" y="89" width="1210" height="762" fill="none" stroke="#8ba1a4" stroke-width="1.2" stroke-dasharray="16 9" opacity=".55"/>
+<line x1="90" y1="107" x2="1250" y2="107" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="90" y1="123" x2="1250" y2="123" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M90 107L134 123M90 123L134 107M134 107L178 123M134 123L178 107M178 107L222 123M178 123L222 107M222 107L266 123M222 123L266 107M266 107L310 123M266 123L310 107M310 107L354 123M310 123L354 107M354 107L398 123M354 123L398 107M398 107L442 123M398 123L442 107M442 107L486 123M442 123L486 107M486 107L530 123M486 123L530 107M530 107L574 123M530 123L574 107M574 107L618 123M574 123L618 107M618 107L662 123M618 123L662 107M662 107L706 123M662 123L706 107M706 107L750 123M706 123L750 107M750 107L794 123M750 123L794 107M794 107L838 123M794 123L838 107M838 107L882 123M838 123L882 107M882 107L926 123M882 123L926 107M926 107L970 123M926 123L970 107M970 107L1014 123M970 123L1014 107M1014 107L1058 123M1014 123L1058 107M1058 107L1102 123M1058 123L1102 107M1102 107L1146 123M1102 123L1146 107M1146 107L1190 123M1146 123L1190 107M1190 107L1234 123M1190 123L1234 107" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<line x1="98" y1="115" x2="98" y2="825" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="82" y1="115" x2="82" y2="825" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M98 115L82 159M82 115L98 159M98 159L82 203M82 159L98 203M98 203L82 247M82 203L98 247M98 247L82 291M82 247L98 291M98 291L82 335M82 291L98 335M98 335L82 379M82 335L98 379M98 379L82 423M82 379L98 423M98 423L82 467M82 423L98 467M98 467L82 511M82 467L98 511M98 511L82 555M82 511L98 555M98 555L82 599M82 555L98 599M98 599L82 643M82 599L98 643M98 643L82 687M82 643L98 687M98 687L82 731M82 687L98 731M98 731L82 775M82 731L98 775M98 775L82 819M82 775L98 819" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<line x1="1258" y1="115" x2="1258" y2="825" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="1242" y1="115" x2="1242" y2="825" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M1258 115L1242 159M1242 115L1258 159M1258 159L1242 203M1242 159L1258 203M1258 203L1242 247M1242 203L1258 247M1258 247L1242 291M1242 247L1258 291M1258 291L1242 335M1242 291L1258 335M1258 335L1242 379M1242 335L1258 379M1258 379L1242 423M1242 379L1258 423M1258 423L1242 467M1242 423L1258 467M1258 467L1242 511M1242 467L1258 511M1258 511L1242 555M1242 511L1258 555M1258 555L1242 599M1242 555L1258 599M1258 599L1242 643M1242 599L1258 643M1258 643L1242 687M1242 643L1258 687M1258 687L1242 731M1242 687L1258 731M1258 731L1242 775M1242 731L1258 775M1258 775L1242 819M1242 775L1258 819" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<line x1="90" y1="817" x2="485" y2="817" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="90" y1="833" x2="485" y2="833" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M90 817L134 833M90 833L134 817M134 817L178 833M134 833L178 817M178 817L222 833M178 833L222 817M222 817L266 833M222 833L266 817M266 817L310 833M266 833L310 817M310 817L354 833M310 833L354 817M354 817L398 833M354 833L398 817M398 817L442 833M398 833L442 817M442 817L486 833M442 833L486 817" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<line x1="850" y1="817" x2="1250" y2="817" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="850" y1="833" x2="1250" y2="833" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M850 817L894 833M850 833L894 817M894 817L938 833M894 833L938 817M938 817L982 833M938 833L982 817M982 817L1026 833M982 833L1026 817M1026 817L1070 833M1026 833L1070 817M1070 817L1114 833M1070 833L1114 817M1114 817L1158 833M1114 833L1158 817M1158 817L1202 833M1158 833L1202 817M1202 817L1246 833M1202 833L1246 817" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<rect x="78" y="103" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="85" y="110" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="1238" y="103" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="1245" y="110" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="78" y="813" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="85" y="820" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="1238" y="813" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="1245" y="820" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="463" y="813" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="470" y="820" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="848" y="813" width="24" height="24" fill="none" stroke="#f0f7f6" stroke-width="2.4" />
+<rect x="855" y="820" width="10" height="10" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="285" y="168" width="615" height="95" fill="none" stroke="#f0f7f6" stroke-width="2.1" />
+<rect x="312" y="186" width="560" height="58" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<line x1="330" y1="187" x2="330" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="351" y1="187" x2="351" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="372" y1="187" x2="372" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="393" y1="187" x2="393" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="414" y1="187" x2="414" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="435" y1="187" x2="435" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="456" y1="187" x2="456" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="477" y1="187" x2="477" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="498" y1="187" x2="498" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="519" y1="187" x2="519" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="540" y1="187" x2="540" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="561" y1="187" x2="561" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="582" y1="187" x2="582" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="603" y1="187" x2="603" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="624" y1="187" x2="624" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="645" y1="187" x2="645" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="666" y1="187" x2="666" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="687" y1="187" x2="687" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="708" y1="187" x2="708" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="729" y1="187" x2="729" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="750" y1="187" x2="750" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="771" y1="187" x2="771" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="792" y1="187" x2="792" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="813" y1="187" x2="813" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="834" y1="187" x2="834" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="855" y1="187" x2="855" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<line x1="876" y1="187" x2="876" y2="244" stroke="#668083" stroke-width="0.8" opacity=".38"/>
+<text x="502" y="220" fill="#f0f7f6" font-size="20" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >MAIN DISPLAY WALL</text>
+<rect x="980" y="160" width="205" height="215" fill="none" stroke="#d5e3e3" stroke-width="2" />
+<line x1="980" y1="160" x2="1185" y2="375" stroke="#668083" stroke-width="1.2" stroke-dasharray="10 8"/>
+<text x="1005" y="274" fill="#d5e3e3" font-size="20" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >STORAGE</text>
+<line x1="980" y1="350" x2="1010" y2="350" stroke="#f0f7f6" stroke-width="1.8" />
+<path d="M980 320Q1010 320 1010 350" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<rect x="142" y="245" width="115" height="335" fill="none" stroke="#8ba1a4" stroke-width="1.7" />
+<rect x="162" y="265" width="75" height="300" fill="none" stroke="#d5e3e3" stroke-width="1" />
+<line x1="162" y1="275" x2="237" y2="275" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="300" x2="237" y2="300" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="325" x2="237" y2="325" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="350" x2="237" y2="350" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="375" x2="237" y2="375" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="400" x2="237" y2="400" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="425" x2="237" y2="425" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="450" x2="237" y2="450" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="475" x2="237" y2="475" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="500" x2="237" y2="500" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="525" x2="237" y2="525" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<line x1="162" y1="550" x2="237" y2="550" stroke="#668083" stroke-width="0.8" opacity=".6"/>
+<text x="146" y="608" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >GRAPHICS</text>
+<rect x="325" y="685" width="295" height="88" fill="none" stroke="#f0f7f6" stroke-width="2.2" />
+<rect x="341" y="703" width="262" height="52" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<text x="359" y="739" fill="#f0f7f6" font-size="18" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >RECEPTION</text>
+<circle cx="256" cy="706" r="22" fill="none" stroke="#8ba1a4" stroke-width="1.4" />
+<path d="M256 706Q267.05273192803463 701.3269798922962 277 706" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q267.1197859037288 710.5111374901719 270.8492424049175 720.8492424049175" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q260.6730201077038 717.0527319280346 256 727" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q251.4888625098281 717.1197859037288 241.1507575950825 720.8492424049175" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q244.94726807196537 710.6730201077038 235 706" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q244.8802140962712 701.4888625098281 241.1507575950825 691.1507575950825" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q251.32697989229618 694.9472680719654 256 685" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M256 706Q260.5111374901719 694.8802140962712 270.8492424049175 691.1507575950825" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="710" cy="719" r="22" fill="none" stroke="#8ba1a4" stroke-width="1.4" />
+<path d="M710 719Q721.0527319280346 714.3269798922962 731 719" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q721.1197859037288 723.5111374901719 724.8492424049175 733.8492424049175" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q714.6730201077038 730.0527319280346 710 740" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q705.4888625098281 730.1197859037288 695.1507575950825 733.8492424049175" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q698.9472680719654 723.6730201077038 689 719" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q698.8802140962712 714.4888625098281 695.1507575950825 704.1507575950825" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q705.3269798922962 707.9472680719654 710 698" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<path d="M710 719Q714.5111374901719 707.8802140962712 724.8492424049175 704.1507575950825" fill="none" stroke="#8ba1a4" stroke-width="1" />
+<rect x="920" y="418" width="285" height="275" fill="none" stroke="#8ba1a4" stroke-width="1.4" stroke-dasharray="13 10"/>
+<circle cx="1060" cy="538" r="30" fill="none" stroke="#f0f7f6" stroke-width="1.8" />
+<g transform="translate(1060 485) rotate(0)">
+<rect x="-15" y="-14" width="30" height="27" fill="none" stroke="#d5e3e3" stroke-width="1.4" rx="5"/>
+<rect x="-17" y="14" width="34" height="9" fill="none" stroke="#d5e3e3" stroke-width="1.2" rx="3"/>
+</g>
+<g transform="translate(1113 538) rotate(90)">
+<rect x="-15" y="-14" width="30" height="27" fill="none" stroke="#d5e3e3" stroke-width="1.4" rx="5"/>
+<rect x="-17" y="14" width="34" height="9" fill="none" stroke="#d5e3e3" stroke-width="1.2" rx="3"/>
+</g>
+<g transform="translate(1060 591) rotate(180)">
+<rect x="-15" y="-14" width="30" height="27" fill="none" stroke="#d5e3e3" stroke-width="1.4" rx="5"/>
+<rect x="-17" y="14" width="34" height="9" fill="none" stroke="#d5e3e3" stroke-width="1.2" rx="3"/>
+</g>
+<g transform="translate(1007 538) rotate(-90)">
+<rect x="-15" y="-14" width="30" height="27" fill="none" stroke="#d5e3e3" stroke-width="1.4" rx="5"/>
+<rect x="-17" y="14" width="34" height="9" fill="none" stroke="#d5e3e3" stroke-width="1.2" rx="3"/>
+</g>
+<text x="955" y="642" fill="#d5e3e3" font-size="18" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >MEETING</text>
+<rect x="394" y="346" width="132" height="89" fill="none" stroke="#f0f7f6" stroke-width="1.9" />
+<rect x="425" y="370" width="70" height="42" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<rect x="414" y="439" width="92" height="5" fill="none" stroke="#668083" stroke-width="1" />
+<rect x="600" y="346" width="132" height="89" fill="none" stroke="#f0f7f6" stroke-width="1.9" />
+<rect x="631" y="370" width="70" height="42" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<rect x="620" y="439" width="92" height="5" fill="none" stroke="#668083" stroke-width="1" />
+<rect x="394" y="510" width="132" height="89" fill="none" stroke="#f0f7f6" stroke-width="1.9" />
+<rect x="425" y="534" width="70" height="42" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<rect x="414" y="603" width="92" height="5" fill="none" stroke="#668083" stroke-width="1" />
+<rect x="600" y="510" width="132" height="89" fill="none" stroke="#f0f7f6" stroke-width="1.9" />
+<rect x="631" y="534" width="70" height="42" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<rect x="620" y="603" width="92" height="5" fill="none" stroke="#668083" stroke-width="1" />
+<text x="458" y="327" fill="#d5e3e3" font-size="18" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >PRODUCT DISPLAY</text>
+<path d="M430 655C390 595 360 505 395 410C438 305 740 311 795 425C839 526 790 630 738 667" fill="none" stroke="#83ced5" stroke-width="2.6" stroke-dasharray="14 14" opacity=".9"/>
+<path d="M475 880L475 770M850 880L850 770" fill="none" stroke="#83ced5" stroke-width="2.1" stroke-dasharray="8 8"/>
+<text x="535" y="862" fill="#f0f7f6" font-size="19" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >VISITOR ENTRY</text>
+<line x1="484" y1="855" x2="550" y2="855" stroke="#83ced5" stroke-width="1.2" />
+<line x1="775" y1="855" x2="845" y2="855" stroke="#83ced5" stroke-width="1.2" />
+<line x1="80" y1="462" x2="1263" y2="462" stroke="#8ba1a4" stroke-width="1.1" stroke-dasharray="22 12" opacity=".7"/>
+<circle cx="64" cy="462" r="23" fill="none" stroke="#d5e3e3" stroke-width="1.7" />
+<text x="56" y="468" fill="#f0f7f6" font-size="18" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >A</text>
+<circle cx="1275" cy="462" r="23" fill="none" stroke="#d5e3e3" stroke-width="1.7" />
+<text x="1267" y="468" fill="#f0f7f6" font-size="18" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >A</text>
+<line x1="90" y1="65" x2="90" y2="94" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="90" cy="50" r="20" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<text x="84" y="56" fill="#f0f7f6" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >A</text>
+<line x1="380" y1="65" x2="380" y2="94" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="380" cy="50" r="20" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<text x="374" y="56" fill="#f0f7f6" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >B</text>
+<line x1="670" y1="65" x2="670" y2="94" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="670" cy="50" r="20" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<text x="664" y="56" fill="#f0f7f6" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >C</text>
+<line x1="960" y1="65" x2="960" y2="94" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="960" cy="50" r="20" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<text x="954" y="56" fill="#f0f7f6" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >D</text>
+<line x1="1250" y1="65" x2="1250" y2="94" stroke="#8ba1a4" stroke-width="1" />
+<circle cx="1250" cy="50" r="20" fill="none" stroke="#8ba1a4" stroke-width="1.2" />
+<text x="1244" y="56" fill="#f0f7f6" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >E</text>
+<line x1="55" y1="115" x2="67" y2="115" stroke="#8ba1a4" stroke-width="1" />
+<line x1="55" y1="355" x2="67" y2="355" stroke="#8ba1a4" stroke-width="1" />
+<line x1="55" y1="595" x2="67" y2="595" stroke="#8ba1a4" stroke-width="1" />
+<line x1="55" y1="825" x2="67" y2="825" stroke="#8ba1a4" stroke-width="1" />
+<line x1="90" y1="2" x2="1250" y2="2" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="90" y1="-6" x2="90" y2="28" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="90" y1="27" x2="90" y2="97" stroke="#668083" stroke-width="0.9" />
+<text x="70" y="-18" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >0</text>
+<line x1="380" y1="-6" x2="380" y2="28" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="380" y1="27" x2="380" y2="97" stroke="#668083" stroke-width="0.9" />
+<text x="360" y="-18" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >4,000</text>
+<line x1="670" y1="-6" x2="670" y2="28" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="670" y1="27" x2="670" y2="97" stroke="#668083" stroke-width="0.9" />
+<text x="650" y="-18" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >8,000</text>
+<line x1="960" y1="-6" x2="960" y2="28" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="960" y1="27" x2="960" y2="97" stroke="#668083" stroke-width="0.9" />
+<text x="940" y="-18" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >12,000</text>
+<line x1="1250" y1="-6" x2="1250" y2="28" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1250" y1="27" x2="1250" y2="97" stroke="#668083" stroke-width="0.9" />
+<text x="1230" y="-18" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >16,000</text>
+<line x1="1303" y1="115" x2="1303" y2="825" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1288" y1="115" x2="1318" y2="115" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1268" y1="115" x2="1282" y2="115" stroke="#668083" stroke-width="0.9" />
+<line x1="1288" y1="355" x2="1318" y2="355" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1268" y1="355" x2="1282" y2="355" stroke="#668083" stroke-width="0.9" />
+<line x1="1288" y1="595" x2="1318" y2="595" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1268" y1="595" x2="1282" y2="595" stroke="#668083" stroke-width="0.9" />
+<line x1="1288" y1="825" x2="1318" y2="825" stroke="#f0f7f6" stroke-width="1.5" />
+<line x1="1268" y1="825" x2="1282" y2="825" stroke="#668083" stroke-width="0.9" />
+<text x="1342" y="490" fill="#f0f7f6" font-size="24" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" transform="rotate(90 1342 490)">9,000</text>
+<path d="M1008 150L1105 20H1315" fill="none" stroke="#83ced5" stroke-width="1.5" />
+<text x="1110" y="0" fill="#83ced5" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >TRUSS CONNECTION / TYP.</text>
+<path d="M1058 530L1320 555" fill="none" stroke="#83ced5" stroke-width="1.2" />
+<text x="1188" y="536" fill="#83ced5" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >MEETING</text>
+</g>
+<path d="M800 1050L1880 10" fill="none" stroke="#83ced5" stroke-width="1.2" opacity=".27"/>
+<path d="M876 1110L1978 60" fill="none" stroke="#8ba1a4" stroke-width="0.9" opacity=".24"/>
+<path d="M1300 0L1919 600" fill="none" stroke="#668083" stroke-width="0.9" opacity=".2"/>
+<g opacity=".75" transform="translate(1130 960)">
+<line x1="0" y1="0" x2="570" y2="0" stroke="#8ba1a4" stroke-width="1" />
+<line x1="30" y1="-83" x2="540" y2="-83" stroke="#f0f7f6" stroke-width="2.3" />
+<line x1="30" y1="-67" x2="540" y2="-67" stroke="#f0f7f6" stroke-width="2.3" />
+<path d="M30 -83L73 -67M30 -67L73 -83M73 -83L116 -67M73 -67L116 -83M116 -83L159 -67M116 -67L159 -83M159 -83L202 -67M159 -67L202 -83M202 -83L245 -67M202 -67L245 -83M245 -83L288 -67M245 -67L288 -83M288 -83L331 -67M288 -67L331 -83M331 -83L374 -67M331 -67L374 -83M374 -83L417 -67M374 -67L417 -83M417 -83L460 -67M417 -67L460 -83M460 -83L503 -67M460 -67L503 -83" fill="none" stroke="#8ba1a4" stroke-width="1.1" />
+<line x1="60" y1="-58" x2="60" y2="-16" stroke="#8ba1a4" stroke-width="1.3" />
+<circle cx="60" cy="-7" r="5" fill="none" stroke="#d5e3e3" stroke-width="1.5" />
+<line x1="185" y1="-58" x2="185" y2="-16" stroke="#8ba1a4" stroke-width="1.3" />
+<circle cx="185" cy="-7" r="5" fill="none" stroke="#d5e3e3" stroke-width="1.5" />
+<line x1="310" y1="-58" x2="310" y2="-16" stroke="#8ba1a4" stroke-width="1.3" />
+<circle cx="310" cy="-7" r="5" fill="none" stroke="#d5e3e3" stroke-width="1.5" />
+<line x1="435" y1="-58" x2="435" y2="-16" stroke="#8ba1a4" stroke-width="1.3" />
+<circle cx="435" cy="-7" r="5" fill="none" stroke="#d5e3e3" stroke-width="1.5" />
+<line x1="520" y1="-58" x2="520" y2="-16" stroke="#8ba1a4" stroke-width="1.3" />
+<circle cx="520" cy="-7" r="5" fill="none" stroke="#d5e3e3" stroke-width="1.5" />
+<text x="0" y="31" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >ELEVATION 02 / STRUCTURAL GRID</text>
+<text x="475" y="31" fill="#8ba1a4" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.4" >1 : 100</text>
+</g>
+<g opacity=".65">
+<line x1="970" y1="90" x2="970" y2="210" stroke="#668083" stroke-width="1.4" />
+<line x1="910" y1="150" x2="1030" y2="150" stroke="#668083" stroke-width="1.4" />
+<circle cx="970" cy="150" r="18" fill="none" stroke="#8ba1a4" stroke-width="1.3" />
+<line x1="1850" y1="840" x2="1850" y2="1020" stroke="#8ba1a4" stroke-width="1.2" />
+<line x1="1760" y1="930" x2="1940" y2="930" stroke="#8ba1a4" stroke-width="1.2" />
+</g>
+<rect width="1180" height="1080" fill="url(#fadeLeft)"/>
+<g opacity=".5"><path d="M62 90H195M62 90V160M70 101H160" fill="none" stroke="#93a7aa" stroke-width="1.3"/><path d="M57 955H128M57 955V1030" fill="none" stroke="#93a7aa" stroke-width="1.2"/></g>
+<g font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#8caaaa" letter-spacing="2" opacity=".75"><text x="1555" y="1032">EXHIBITION PLAN  /  01 : 100</text></g>
 </svg>
